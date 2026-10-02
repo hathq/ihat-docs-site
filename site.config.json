@@ -1,0 +1,96 @@
+{
+  "schema": "nuxtjp://localized-site/site-config/v1",
+  "siteId": "ihat-docs",
+  "serviceId": "hat-spec",
+  "origin": "https://ihat.online",
+  "audienceScope": "japan",
+  "defaultLocale": "ja",
+  "fallbackLocale": "en",
+  "prefixDefaultLocale": false,
+  "locales": ["ja", "en"],
+  "externalActions": false,
+  "content": {
+    "ja": {
+      "brand": "iHAT Online",
+      "tagline": "HAT、Fitting、Hatterを安全に理解し利用するための公式仕様",
+      "summary": "HATの役割定義、環境へのFitting、Codex互換の独立ダウンストリームHatterの利用境界を公開します。閲覧によってインストール、設定変更、MCP接続、外部操作が行われることはありません。",
+      "features": [
+        {"id": "hat-contract", "title": "HAT仕様", "summary": "人格、役割、権限、引き継ぎを機械検証可能な契約として説明します。"},
+        {"id": "fitting-guidance", "title": "Fitting指針", "summary": "利用者、制度、業務、実行環境へHATを適合させる確認事項を示します。"},
+        {"id": "hatter-usage", "title": "Hatter利用方法", "summary": "Codexと競合しないコマンド、状態領域、任意連携、アップストリーム追従方針を案内します。"}
+      ],
+      "docs": {
+        "overview": {
+          "slug": "/docs",
+          "title": "HAT仕様の概要",
+          "summary": "HAT、Fitting、Hatterの責務を分けて説明します。",
+          "sections": [
+            {"id": "concept", "title": "三つの責務", "body": ["HATは役割と振る舞いの契約、Fittingは利用条件への適合、Hatterはその契約を選択・利用できる独立した操作面です。Hatterを使わず仕様だけを利用することもできます。"]},
+            {"id": "responsibility", "title": "意思決定の責任", "body": ["HATは判断材料と手順を提供できますが、権限を自動的に拡張しません。承認や法的・業務的判断は、明示された人または外部システムの責任境界に残ります。"]}
+          ]
+        },
+        "gettingStarted": {
+          "slug": "/docs/getting-started",
+          "title": "HATを利用する前に",
+          "summary": "互換性と権限を確認してローカルで検証する順序です。",
+          "sections": [
+            {"id": "select-version", "title": "仕様と版を選ぶ", "body": ["対象HAT、仕様版、必要なSkillやMCP、利用地域を確認します。公式HATであっても、利用環境と目的に合うことをFittingで確認してください。"]},
+            {"id": "local-validation", "title": "ローカルで検証する", "body": ["公開されたSchemaと例を取得し、入力、権限、出力先を確認してから導入します。Hatterを使う場合は `hatter` と `~/.hatter/agent` の独立境界を確認します。"]}
+          ]
+        },
+        "security": {
+          "slug": "/docs/security",
+          "title": "安全な利用境界",
+          "summary": "HAT文書と実行環境を分離する原則です。",
+          "sections": [
+            {"id": "no-secrets", "title": "秘密値を仕様へ置かない", "body": ["HAT、Fitting、Skillの公開定義へ資格情報、顧客情報、個人記録を埋め込みません。必要な資格情報は実行環境の専用保管先から明示的に解決します。"]},
+            {"id": "explicit-install", "title": "導入と接続は明示操作", "body": ["このサイトはコマンド実行、パッケージ導入、MCP登録、認証、外部サービス接続を行いません。利用者が内容と権限を確認した後に、個別の手順を実行します。"]}
+          ]
+        }
+      },
+      "privacy": {"label": "プライバシー", "summary": "仕様閲覧のためにHATの実行履歴、会話、資格情報、顧客データを要求しません。将来の解析機能は公開文書と明示的な同意境界を備えるまで無効です。"},
+      "contact": {"label": "仕様に関する連絡", "summary": "仕様の誤りや安全上の懸念は、ihat.onlineで確認済みとして案内される窓口へ、再現に必要な公開情報だけを送ってください。秘密値や会話記録を添付しないでください。"}
+    },
+    "en": {
+      "brand": "iHAT Online",
+      "tagline": "The official specification for understanding and using HAT, Fitting, and Hatter safely",
+      "summary": "Publishes HAT role definitions, environment Fitting, and the usage boundary of Hatter, an independent Codex-compatible downstream. Reading the site never installs software, changes configuration, connects MCP, or performs an external action.",
+      "features": [
+        {"id": "hat-contract", "title": "HAT contract", "summary": "Explains persona, role, authority, and handoff as a machine-verifiable contract."},
+        {"id": "fitting-guidance", "title": "Fitting guidance", "summary": "Lists the checks required to fit a HAT to a person, institution, task, and runtime environment."},
+        {"id": "hatter-usage", "title": "Using Hatter", "summary": "Documents the non-conflicting command and state boundary, optional integrations, and upstream maintenance policy."}
+      ],
+      "docs": {
+        "overview": {
+          "slug": "/docs",
+          "title": "HAT specification overview",
+          "summary": "Separates the responsibilities of HAT, Fitting, and Hatter.",
+          "sections": [
+            {"id": "concept", "title": "Three responsibilities", "body": ["A HAT is a role and behavior contract, Fitting checks suitability for the use conditions, and Hatter is an independent interface for selecting and using that contract. The specification can be used without Hatter."]},
+            {"id": "responsibility", "title": "Decision accountability", "body": ["A HAT can provide evidence and procedure, but it does not expand authority automatically. Approval and legal or operational judgment remain with the stated person or external-system boundary."]}
+          ]
+        },
+        "gettingStarted": {
+          "slug": "/docs/getting-started",
+          "title": "Before using a HAT",
+          "summary": "The order for checking compatibility and authority before local validation.",
+          "sections": [
+            {"id": "select-version", "title": "Select the contract and version", "body": ["Identify the HAT, specification version, required Skills or MCP services, and operating region. Even an official HAT must be fitted to the intended environment and purpose."]},
+            {"id": "local-validation", "title": "Validate locally", "body": ["Obtain the published schema and examples, then inspect input, authority, and output destinations before installation. For Hatter, verify the independent `hatter` command and `~/.hatter/agent` state boundary."]}
+          ]
+        },
+        "security": {
+          "slug": "/docs/security",
+          "title": "Safe usage boundary",
+          "summary": "Principles that separate HAT documents from their execution environment.",
+          "sections": [
+            {"id": "no-secrets", "title": "Keep secrets out of specifications", "body": ["Do not embed credentials, customer information, or personal records in public HAT, Fitting, or Skill definitions. Resolve required credentials explicitly from a dedicated runtime store."]},
+            {"id": "explicit-install", "title": "Installation and connection are explicit", "body": ["This site cannot run commands, install packages, register MCP services, authenticate, or connect external services. A user executes a separate procedure only after reviewing its content and permissions."]}
+          ]
+        }
+      },
+      "privacy": {"label": "Privacy", "summary": "Reading the specification does not require HAT execution history, conversations, credentials, or customer data. Future analytics remain disabled until public documentation and an explicit consent boundary exist."},
+      "contact": {"label": "Specification contact", "summary": "Report specification errors or safety concerns through a verified channel identified on ihat.online, sending only public information needed to reproduce the issue. Never attach secrets or conversation records."}
+    }
+  }
+}

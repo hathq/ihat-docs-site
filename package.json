@@ -1,0 +1,30 @@
+{
+  "name": "@hathq/ihat-docs-site",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "packageManager": "pnpm@10.29.3",
+  "engines": {
+    "node": ">=24.15.0 <25",
+    "pnpm": "10.29.3"
+  },
+  "scripts": {
+    "dev": "nuxt dev --host 127.0.0.1",
+    "build": "nuxt build",
+    "preview": "nuxt preview --host 127.0.0.1",
+    "typecheck": "nuxt typecheck",
+    "test": "node --test",
+    "validate:content": "nuxtjp-localized-site validate --content-root ."
+  },
+  "dependencies": {
+    "@nuxtjp/localized-site": "file:vendor/nuxtjp-localized-site-0.1.0.tgz",
+    "nuxt": "4.5.0",
+    "vue": "3.5.39"
+  },
+  "devDependencies": {
+    "@types/node": "24.12.0",
+    "typescript": "5.9.3",
+    "vue-tsc": "3.2.8"
+  }
+}
