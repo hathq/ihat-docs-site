@@ -18,9 +18,9 @@
     "validate:content": "nuxtjp-localized-site validate --content-root ."
   },
   "dependencies": {
-    "@nuxtjp/localized-site": "file:vendor/nuxtjp-localized-site-0.1.0.tgz",
-    "nuxt": "4.5.0",
-    "vue": "3.5.39"
+    "@nuxtjp/localized-site": "0.1.0",
+    "nuxt": "4.5.1",
+    "vue": "3.5.40"
   },
   "devDependencies": {
     "@types/node": "24.12.0",
