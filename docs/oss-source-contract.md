@@ -59,3 +59,12 @@ Schema definitions in the map remain owned by their canonical validator and
 consumers. An absent schema file means no separate schema file is declared; it does
 not mean the runtime interface has no validation. Do not introduce another common
 schema solely to mirror an implementation type.
+
+## Independent site source acceptance
+
+`site-source.yml` uses the committed official registry lock, validates content and
+localized routes/metadata, runs owner tests, typechecks and builds this independent
+application. It has read-only GitHub permissions and performs no hosting deployment.
+This site owns its content and introduction links; the managed localized-site
+module owns shared rendering/validation. A successful source build does not assert
+that product features, download counters or production domains are operational.
