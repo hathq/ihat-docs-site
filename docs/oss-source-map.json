@@ -53,6 +53,66 @@
           ]
         }
       ]
+    },
+    {
+      "path": ".github/workflows/site-source.yml",
+      "jobs": [
+        {
+          "job": "site-source",
+          "condition": null,
+          "runs_on": "ubuntu-24.04",
+          "steps": [
+            {
+              "name": null,
+              "run": null,
+              "uses": "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+              "condition": null
+            },
+            {
+              "name": null,
+              "run": null,
+              "uses": "actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38",
+              "condition": null
+            },
+            {
+              "name": "Install pinned package manager",
+              "run": "npm install --global --ignore-scripts --no-audit --no-fund pnpm@10.29.3",
+              "uses": null,
+              "condition": null
+            },
+            {
+              "name": "Resolve the committed official dependency tree",
+              "run": "pnpm install --frozen-lockfile --store-dir \"$RUNNER_TEMP/site-store\" --registry=https://registry.npmjs.org",
+              "uses": null,
+              "condition": null
+            },
+            {
+              "name": null,
+              "run": "pnpm validate:content",
+              "uses": null,
+              "condition": null
+            },
+            {
+              "name": null,
+              "run": "pnpm test",
+              "uses": null,
+              "condition": null
+            },
+            {
+              "name": null,
+              "run": "pnpm typecheck",
+              "uses": null,
+              "condition": null
+            },
+            {
+              "name": null,
+              "run": "pnpm build",
+              "uses": null,
+              "condition": null
+            }
+          ]
+        }
+      ]
     }
   ],
   "evidence_policy": "Declarations and source paths are not proof of an executed acceptance. Exact CI head and result are recorded separately. No live accounts or production acceptance is inferred."
