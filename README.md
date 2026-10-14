@@ -9,11 +9,11 @@ Explain HAT, Fitting and Hatter specifications and safe usage.
 
 ## Current scope
 
-The documentation site does not install roles, authenticate an account or connect MCP services. The declared `@nuxtjp/localized-site@0.2.2` dependency is obtained from the official npm registry using the frozen lockfile. No deployment is performed by these instructions.
+The documentation site does not install roles, authenticate an account or connect MCP services. The declared `@nuxtjp/localized-site` dependency is obtained from the official npm registry using the frozen lockfile. No deployment is performed by these instructions.
 
 ## Getting started
 
-The manifest and frozen lockfile resolve `@nuxtjp/localized-site@0.2.2` from the official npm registry. Install the pinned versions with the command below; no local package archives or neighboring source checkouts are required.
+Install the public-registry dependencies declared in this repository. Dependabot proposes manifest and lockfile updates through independently verified pull requests.
 
 Use `pnpm@10.29.3` and the Node.js version declared in `engines` in `package.json`. Run from this repository:
 
@@ -32,3 +32,5 @@ pnpm build
 [Verification cases](test) · [Contributing](CONTRIBUTING.md) · [Security reporting](SECURITY.md) · [License](LICENSE) · [Attribution notices](NOTICE)
 
 [OSS responsibility and source completion](docs/oss-source-contract.md) defines the supported package boundary and required acceptance. It does not declare unexecuted source, distribution or production checks complete.
+
+Dependency updates: [repository policy](docs/dependency-updates.md).
