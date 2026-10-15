@@ -3,6 +3,7 @@ import type { NuxtModule } from 'nuxt/schema'
 
 const siteBranding: NuxtModule = (_options, nuxt) => {
   nuxt.options.css.push(fileURLToPath(new URL('./theme.css', import.meta.url)))
+  nuxt.options.css.push(fileURLToPath(new URL('./visuals.css', import.meta.url)))
   nuxt.options.app.head.link ??= []
   nuxt.options.app.head.link.push(
     { rel: 'icon', type: 'image/png', href: '/brand/icon.png' },

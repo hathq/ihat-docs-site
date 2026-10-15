@@ -1,0 +1,53 @@
+:root { --visual-brand-mark: url("/brand/icon.png"); }
+/* Shared visual grammar; each site owns this file and its static assets. */
+:is(.editorial-brand,.nls-header > a,.wordmark)::before{content:"";display:block;flex:0 0 48px;width:48px;height:48px;background:var(--visual-brand-mark) center/contain no-repeat}
+.editorial-diagram{aspect-ratio:1.2!important;border:1px solid color-mix(in srgb,var(--brand-accent) 16%,transparent);border-radius:32px;background:linear-gradient(140deg,#fff,color-mix(in srgb,var(--brand-accent) 7%,#fff))!important;box-shadow:0 30px 80px color-mix(in srgb,var(--brand-accent) 10%,transparent);isolation:isolate}
+.editorial-diagram::before{content:"";position:absolute;inset:0;background:url('/brand/overview.svg') center/contain no-repeat;z-index:-1}
+.editorial-diagram::after{content:"";position:absolute;left:35%;top:32%;width:30%;height:36%;background:var(--visual-brand-mark) center/contain no-repeat}
+.editorial-diagram>:is(span,.diagram-outline,.environment-stack,.interface-scene){display:none!important}
+.editorial-diagram>small{bottom:14px;opacity:.65;font-size:10px}
+.editorial-directions{gap:20px!important;padding-top:24px!important;border-top:0!important}
+.editorial-directions article{padding:28px;border:1px solid color-mix(in srgb,var(--brand-accent) 14%,transparent);border-radius:22px;background:#fff;min-width:0}
+:is(.editorial-directions,.nls-features) h2::before{content:"";display:block;width:48px;height:48px;margin-bottom:22px;background:var(--brand-accent);mask:var(--visual-icon,url('/brand/icons/layers.svg')) center/30px no-repeat}
+.editorial-directions h2{font-size:21px!important;line-height:1.45}
+.editorial-directions p{line-height:1.9}
+:is(.showcase-grid article,.showcase-metrics article){position:relative;border-radius:20px!important;border-color:color-mix(in srgb,var(--brand-accent) 14%,transparent)!important}
+.showcase-grid article::before,.showcase-metrics article::before{content:"";display:block;width:36px;height:36px;margin-bottom:18px;background:var(--brand-accent);mask:url('/brand/icons/code.svg') center/28px no-repeat}
+.showcase-metrics article::before{mask-image:url('/brand/icons/download.svg')}
+.showcase-grid article::after{content:"";position:absolute;top:22px;right:22px;width:36px;height:36px;background:var(--visual-brand-mark) center/contain no-repeat;opacity:.7;pointer-events:none}
+.showcase-grid article>p:first-child{padding-right:36px}
+.showcase-grid h2{line-height:1.5}
+.portfolio .hero-art{position:relative}
+.portfolio .project-brand{position:absolute;right:24px;top:48px;width:68px;height:68px;object-fit:contain;z-index:1;padding:8px;background:#ffffffed;border:1px solid #ffffff80;border-radius:18px}
+.portfolio .hero-brand{position:absolute;left:25%;top:20%;width:50%;height:50%;object-fit:contain}
+.portfolio .wordmark::before{flex-basis:46px;width:46px;height:46px}
+.hat-visual .hat-hero-brand{position:relative;width:150px;height:150px;object-fit:contain;z-index:1;filter:drop-shadow(0 15px 24px #00a8e84d)}
+.hat-products .hat-product-logo{display:block;width:72px;height:72px;padding:8px;object-fit:contain;margin-bottom:26px;background:#f6fafc;border:1px solid #e0ebf1;border-radius:20px}
+.hat-card:not(.hat-company-facts .hat-card)::before{content:"";display:block;width:36px;height:36px;margin-bottom:20px;background:var(--brand-accent,#00a8e8);mask:url('/brand/icons/layers.svg') center/30px no-repeat}
+.nj-workspace .nj-preview-brand{float:right;width:60px;height:60px;object-fit:contain}
+.nj-feature-grid .nj-feature-icon{display:block;width:36px;height:36px;margin-bottom:24px}
+.nj-module-symbol img{width:32px;height:32px;object-fit:contain}
+.nj-module-card::before{content:"";display:block;width:40px;height:40px;margin-bottom:22px;background:var(--nj-green);mask:url('/brand/icons/layers.svg') center/30px no-repeat}
+@media(max-width:640px){
+ :is(.editorial-brand,.nls-header > a,.wordmark)::before{flex-basis:36px;width:36px;height:36px}
+ .editorial-diagram{border-radius:24px}
+ .editorial-directions article{padding:24px}
+ .portfolio .project-brand{width:58px;height:58px;right:18px}
+ .portfolio .wordmark::before{flex-basis:34px;width:34px;height:34px}
+ .hat-visual .hat-hero-brand{width:120px;height:120px}
+}
+@media(forced-colors:active){.editorial-diagram,.editorial-directions article,.hat-product-logo{border:1px solid CanvasText}}
+/* The small standalone sites use the same brand-and-capabilities scene. */
+.nls-landing{max-width:none;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:64px;align-items:center}
+.nls-landing>:is(p,h1){grid-column:1}
+.nls-landing::before{content:"";grid-area:1/2/5/3;align-self:center;aspect-ratio:1.2;width:100%;min-height:320px;border:1px solid color-mix(in srgb,var(--brand-accent) 16%,transparent);border-radius:28px;background:url('/brand/overview.svg') center/contain no-repeat,#fff;box-shadow:0 24px 65px color-mix(in srgb,var(--brand-accent) 9%,transparent)}
+.nls-landing::after{content:"";grid-area:1/2/5/3;place-self:center;width:32%;aspect-ratio:1;background:var(--visual-brand-mark) center/contain no-repeat}
+.nls-landing>.nls-features,.nls-landing>.nls-primary-link{grid-column:1/-1}
+.nls-landing>.nls-features{margin-top:64px}
+.nls-landing>h1{font-size:clamp(38px,4vw,62px);line-height:1.15;letter-spacing:-.045em;margin-block:16px}
+.nls-landing>.nls-tagline{font-size:clamp(22px,2vw,28px);line-height:1.5;margin-block:12px}
+.nls-landing>p:not(.nls-eyebrow){line-height:1.9}
+@media(max-width:760px){.nls-landing{grid-template-columns:1fr;gap:0}.nls-landing::before{grid-area:5/1/6/2;min-height:320px;margin-top:24px}.nls-landing::after{grid-area:5/1/6/2;margin-top:24px;width:30%;max-width:135px}.nls-landing>.nls-features{grid-row:6;margin-top:32px}.nls-landing>.nls-primary-link{grid-row:7}}
+.editorial-directions article:nth-child(1) h2::before, .nls-features article:nth-child(1) h2::before { --visual-icon: url("/brand/icons/document.svg"); }
+.editorial-directions article:nth-child(2) h2::before, .nls-features article:nth-child(2) h2::before { --visual-icon: url("/brand/icons/search.svg"); }
+.editorial-directions article:nth-child(3) h2::before, .nls-features article:nth-child(3) h2::before { --visual-icon: url("/brand/icons/device.svg"); }
