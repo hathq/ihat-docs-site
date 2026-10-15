@@ -20,7 +20,7 @@ node_modules/
 target/
 /.nuxt/
 /.output/
-/dist/
+/dist
 /build/
 /coverage/
 /.cache/
