@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "site": "ihat-docs",
+  "source_file": "exec-6a8ca1e1-7734-41d4-803e-9a2490fa23c4.png",
+  "sha256": "ba52a75d7506d116720aa76e195a23ccfe139edbb1cddbb8dd51ed96acfd7a5b",
+  "artwork": "User-selected multi-hat symbol, original bytes preserved",
+  "theme": {
+    "accent": "#0868a5",
+    "paper": "#f4f9fd",
+    "ink": "#102d46"
+  }
+}
