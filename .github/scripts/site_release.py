@@ -159,6 +159,16 @@ def verify_assets(origin, expected):
         list(pool.map(one, expected.items()))
 
 
+def deployment_tool(root, site):
+    app = owned(root, site['appDirectory'])
+    manifest = read(app / 'package.json')
+    version = manifest.get('devDependencies', {}).get('wrangler', '')
+    binary = app / 'node_modules/.bin/wrangler'
+    if not re.fullmatch(r'[0-9]+\.[0-9]+\.[0-9]+', version) or not (app / 'pnpm-lock.yaml').is_file() or not binary.is_file() or not os.access(binary, os.X_OK):
+        raise ValueError('Pinned Wrangler dependency, lockfile and installed executable are required')
+    return binary
+
+
 def deploy(root, contract, site, output, expected):
     receipt = unpack(output / 'site.tgz', expected, output / 'verified')
     if receipt['site'] != site or receipt['source'] != os.environ['GITHUB_SHA']:
@@ -215,6 +225,7 @@ def deploy(root, contract, site, output, expected):
             raise ValueError('Only initial tag push may deploy; later runs verify existing bytes only')
         # A fresh run is not evidence that an earlier deployment failed. Refuse
         # replay after a matching source/version; only verify those bytes above.
+        wrangler = deployment_tool(root, site)
         (output / 'operation.json').write_text(json.dumps({'state':'deployment-starting; do not replay','site':site['id'],'source':receipt['source']}) + '\n')
         subprocess.run([str(wrangler), 'deploy', '--config', str(output / 'wrangler.json')], cwd=root, check=True)
     verify_assets(site['origin'], receipt['files'])
