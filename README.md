@@ -34,3 +34,5 @@ pnpm build
 [OSS responsibility and source completion](docs/oss-source-contract.md) defines the supported package boundary and required acceptance. It does not declare unexecuted source, distribution or production checks complete.
 
 Dependency updates: [repository policy](docs/dependency-updates.md).
+
+Security maintenance uses `@nuxtjp/dependency-security` with committed patches and lockfile. CI tests the actually installed dependencies after a frozen install. Version-only braces/node-forge alerts remain visible until upstream releases or a reviewed resolution; source acceptance and production deployment are separate.

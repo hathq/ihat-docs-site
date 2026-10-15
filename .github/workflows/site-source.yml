@@ -21,6 +21,8 @@ jobs:
         run: npm install --global --ignore-scripts --no-audit --no-fund pnpm@10.29.3
       - name: Resolve the committed official dependency tree
         run: pnpm install --frozen-lockfile --store-dir "$RUNNER_TEMP/site-store" --registry=https://registry.npmjs.org
+      - name: Verify active reviewed dependency backports
+        run: pnpm exec nuxtjp-security-check --project-root .
       - run: pnpm validate:content
       - run: pnpm test
       - run: pnpm typecheck
