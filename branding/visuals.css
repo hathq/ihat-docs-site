@@ -38,6 +38,7 @@
 }
 @media(forced-colors:active){.editorial-diagram,.editorial-directions article,.hat-product-logo{border:1px solid CanvasText}}
 /* The small standalone sites use the same brand-and-capabilities scene. */
+.nls-landing,.nls-landing::before,.nls-landing::after{box-sizing:border-box;min-width:0;max-width:100%}
 .nls-landing{max-width:none;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:64px;align-items:center}
 .nls-landing>:is(p,h1){grid-column:1}
 .nls-landing::before{content:"";grid-area:1/2/5/3;align-self:center;aspect-ratio:1.2;width:100%;min-height:320px;border:1px solid color-mix(in srgb,var(--brand-accent) 16%,transparent);border-radius:28px;background:url('/brand/overview.svg') center/contain no-repeat,#fff;box-shadow:0 24px 65px color-mix(in srgb,var(--brand-accent) 9%,transparent)}
@@ -47,7 +48,7 @@
 .nls-landing>h1{font-size:clamp(38px,4vw,62px);line-height:1.15;letter-spacing:-.045em;margin-block:16px}
 .nls-landing>.nls-tagline{font-size:clamp(22px,2vw,28px);line-height:1.5;margin-block:12px}
 .nls-landing>p:not(.nls-eyebrow){line-height:1.9}
-@media(max-width:760px){.nls-landing{grid-template-columns:1fr;gap:0}.nls-landing::before{grid-area:5/1/6/2;min-height:320px;margin-top:24px}.nls-landing::after{grid-area:5/1/6/2;margin-top:24px;width:30%;max-width:135px}.nls-landing>.nls-features{grid-row:6;margin-top:32px}.nls-landing>.nls-primary-link{grid-row:7}}
+@media(max-width:760px){.nls-landing{grid-template-columns:minmax(0,1fr);gap:0}.nls-landing::before{grid-area:5/1/6/2;min-height:320px;margin-top:24px}.nls-landing::after{grid-area:5/1/6/2;margin-top:24px;width:30%;max-width:135px}.nls-landing>.nls-features{grid-row:6;margin-top:32px}.nls-landing>.nls-primary-link{grid-row:7}}
 .editorial-directions article:nth-child(1) h2::before, .nls-features article:nth-child(1) h2::before { --visual-icon: url("/brand/icons/document.svg"); }
 .editorial-directions article:nth-child(2) h2::before, .nls-features article:nth-child(2) h2::before { --visual-icon: url("/brand/icons/search.svg"); }
 .editorial-directions article:nth-child(3) h2::before, .nls-features article:nth-child(3) h2::before { --visual-icon: url("/brand/icons/device.svg"); }
