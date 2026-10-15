@@ -7,7 +7,7 @@ import tarfile
 import tempfile
 import unittest
 from unittest.mock import patch
-from site_release import select, pack, unpack, admit, deploy, verify_assets
+from site_release import select, pack, unpack, admit, deploy, verify_assets, deployment_tool
 from subprocess import CompletedProcess
 
 
@@ -103,6 +103,27 @@ class SiteReleaseTests(unittest.TestCase):
             deploy(self.root,self.contract,self.site,self.root/'archive',digest)
             verify.assert_called_once();run.assert_not_called()
         self.assertTrue(json.loads((self.root/'archive/acceptance.json').read_text())['verify_only'])
+
+    def test_deployment_tool_must_be_pinned_locked_and_executable(self):
+        (self.root/'package.json').write_text('{"devDependencies":{"wrangler":"4.149.0"}}')
+        with self.assertRaises(ValueError):deployment_tool(self.root,self.site)
+        (self.root/'pnpm-lock.yaml').write_text('lockfileVersion: 9.0')
+        binary=self.root/'node_modules/.bin/wrangler';binary.parent.mkdir(parents=True)
+        binary.write_text('#!/bin/sh\nexit 0\n')
+        with self.assertRaises(ValueError):deployment_tool(self.root,self.site)
+        binary.chmod(0o700)
+        self.assertEqual(deployment_tool(self.root,self.site),binary)
+        (self.root/'package.json').write_text('{"devDependencies":{"wrangler":"latest"}}')
+        with self.assertRaises(ValueError):deployment_tool(self.root,self.site)
+
+    def test_missing_tool_stops_before_operation_record_or_subprocess(self):
+        _,digest=self.prepare()
+        (self.root/'package.json').write_text('{"devDependencies":{}}')
+        env={**self.env,'GH_TOKEN':'synthetic-test-token','CLOUDFLARE_API_TOKEN':'synthetic-fixture-token','GITHUB_EVENT_NAME':'push','GITHUB_RUN_ATTEMPT':'1'}
+        with patch.dict('os.environ',env),patch('site_release.request',side_effect=self.provider(False)),patch('site_release.subprocess.run') as run:
+            with self.assertRaises(ValueError):deploy(self.root,self.contract,self.site,self.root/'archive',digest)
+            run.assert_not_called()
+        self.assertFalse((self.root/'archive/operation.json').exists())
 
     def test_asset_readback_accepts_only_prepared_bytes_after_bounded_stale_reads(self):
         expected={'404.html':hashlib.sha256(b'approved fallback').hexdigest()}
