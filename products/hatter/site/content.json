@@ -1,0 +1,765 @@
+{
+  "siteId": "hatter",
+  "origin": "https://hatter.ihat.online",
+  "defaultLocale": "ja",
+  "locales": {
+    "ja": {
+      "brand": "Hatter",
+      "caption": "",
+      "origin": "https://hatter.ihat.online",
+      "locale": "ja",
+      "accent": "#007baa",
+      "icon": "/brand/icon.png",
+      "navigation": [
+        {
+          "title": "機能",
+          "href": "/features"
+        },
+        {
+          "title": "活用シーン",
+          "href": "/use-cases"
+        },
+        {
+          "title": "ドキュメント",
+          "href": "/docs"
+        },
+        {
+          "title": "ダウンロード",
+          "href": "/download"
+        },
+        {
+          "title": "読みもの",
+          "href": "/journal"
+        }
+      ],
+      "pages": [
+        {
+          "path": "/docs",
+          "title": "ガイドとドキュメント",
+          "summary": "機能と使い方を紹介するガイド。",
+          "sections": [
+            {
+              "title": "はじめの一歩",
+              "text": "目的を確認し、必要な機能から始めましょう。",
+              "links": [
+                {
+                  "title": "導入ガイド",
+                  "href": "/docs/getting-started"
+                },
+                {
+                  "title": "安全に使うために",
+                  "href": "/security"
+                }
+              ]
+            }
+          ],
+          "kind": "page",
+          "label": "ガイドとドキュメント",
+          "category": "",
+          "status": "published"
+        },
+        {
+          "path": "/docs/getting-started",
+          "title": "はじめる前に、道筋をつかむ。",
+          "summary": "機能、使う場面、データの扱いを確認するためのガイドです。",
+          "sections": [
+            {
+              "title": "目的を選ぶ",
+              "text": "取り組む内容を機能や用途のページで確認します。",
+              "links": [
+                {
+                  "title": "機能を見る",
+                  "href": "/features"
+                }
+              ]
+            },
+            {
+              "title": "利用条件を確認する",
+              "text": "導入するソフトウェアの対応環境、ライセンス、提供版を確認してください。",
+              "links": []
+            }
+          ],
+          "kind": "page",
+          "label": "はじめる前に、道筋をつかむ。",
+          "category": "",
+          "status": "published"
+        },
+        {
+          "path": "/journal",
+          "title": "考え方と、実践の記録。",
+          "summary": "設計、開発、AI活用のテーマから、読みものをお届けします。",
+          "sections": [
+            {
+              "title": "テーマから読む",
+              "text": "記事と合わせて、関連するガイドもご覧いただけます。",
+              "links": [
+                {
+                  "title": "設計と使い方",
+                  "href": "/docs"
+                },
+                {
+                  "title": "情報の扱い",
+                  "href": "/security"
+                }
+              ]
+            }
+          ],
+          "kind": "journal",
+          "label": "考え方と、実践の記録。",
+          "category": "",
+          "status": "published"
+        },
+        {
+          "path": "/privacy",
+          "title": "プライバシー",
+          "summary": "このサイトで扱う情報について。",
+          "sections": [
+            {
+              "title": "閲覧時の情報",
+              "text": "このサイトは静的なページを配信します。配信とセキュリティのため、配信事業者がIPアドレスなどの通信情報を処理します。独自のアクセス解析やログイン機能は設置していません。",
+              "links": []
+            },
+            {
+              "title": "外部サイト",
+              "text": "外部リンク先では、それぞれのプライバシー方針をご確認ください。",
+              "links": []
+            }
+          ],
+          "kind": "page",
+          "label": "プライバシー",
+          "category": "",
+          "status": "published"
+        },
+        {
+          "path": "/security",
+          "title": "安心して使うために。",
+          "summary": "情報と操作の範囲を確かめるための基本的な考え方。",
+          "sections": [
+            {
+              "title": "秘密情報を共有しない",
+              "text": "公開のIssueや問い合わせに、パスワード、トークン、個人情報を記載しないでください。",
+              "links": []
+            },
+            {
+              "title": "操作の前に確認する",
+              "text": "対象と権限を確かめ、必要な範囲だけを許可してください。製品ごとの利用ガイドとセキュリティ方針も確認してください。",
+              "links": []
+            }
+          ],
+          "kind": "page",
+          "label": "安心して使うために。",
+          "category": "",
+          "status": "published"
+        },
+        {
+          "path": "/sitemap",
+          "title": "サイトマップ",
+          "summary": "ページを一覧から探す。",
+          "sections": [],
+          "kind": "page",
+          "label": "サイトマップ",
+          "category": "",
+          "status": "published"
+        },
+        {
+          "path": "/",
+          "title": "AIとの仕事を、\n自分の手元から。",
+          "label": "Hatter",
+          "summary": "役割と権限を確認しながら、AIと作業するローカルファーストの環境。",
+          "kind": "home",
+          "status": "published",
+          "category": "",
+          "sections": [
+            {
+              "title": "できること",
+              "text": "目的から、機能と使い方をご覧ください。",
+              "links": [
+                {
+                  "title": "役割を選ぶ",
+                  "href": "/features/roles",
+                  "summary": "作業の目的と必要な機能をHATとして扱い、役割の境界を確認する設計です。"
+                },
+                {
+                  "title": "手元で使う",
+                  "href": "/features/local-first",
+                  "summary": "CLIをローカルに置き、iHATを通して必要なHATの配布版を取得・検証する構成です。"
+                },
+                {
+                  "title": "実行を確かめる",
+                  "href": "/features/permissions",
+                  "summary": "インストールと操作の許可を分け、対象と権限を確認して作業を進める設計です。"
+                }
+              ]
+            },
+            {
+              "title": "使い始める前に",
+              "text": "利用ガイドと、提供される配布版の情報をご確認ください。",
+              "links": [
+                {
+                  "title": "ガイドを読む",
+                  "href": "/docs"
+                },
+                {
+                  "title": "配布について",
+                  "href": "/download"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/features",
+          "title": "機能と考え方",
+          "label": "機能と考え方",
+          "summary": "役割と権限を確認しながら、AIと作業するローカルファーストの環境。",
+          "kind": "page",
+          "status": "published",
+          "category": "",
+          "sections": [
+            {
+              "title": "役割を選ぶ",
+              "text": "作業の目的と必要な機能をHATとして扱い、役割の境界を確認する設計です。",
+              "links": [
+                {
+                  "title": "役割を選ぶ",
+                  "href": "/features/roles",
+                  "summary": "作業の目的と必要な機能をHATとして扱い、役割の境界を確認する設計です。"
+                }
+              ]
+            },
+            {
+              "title": "手元で使う",
+              "text": "CLIをローカルに置き、iHATを通して必要なHATの配布版を取得・検証する構成です。",
+              "links": [
+                {
+                  "title": "手元で使う",
+                  "href": "/features/local-first",
+                  "summary": "CLIをローカルに置き、iHATを通して必要なHATの配布版を取得・検証する構成です。"
+                }
+              ]
+            },
+            {
+              "title": "実行を確かめる",
+              "text": "インストールと操作の許可を分け、対象と権限を確認して作業を進める設計です。",
+              "links": [
+                {
+                  "title": "実行を確かめる",
+                  "href": "/features/permissions",
+                  "summary": "インストールと操作の許可を分け、対象と権限を確認して作業を進める設計です。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/features/roles",
+          "title": "役割を選ぶ",
+          "label": "役割を選ぶ",
+          "summary": "作業の目的と必要な機能をHATとして扱い、役割の境界を確認する設計です。",
+          "kind": "page",
+          "status": "published",
+          "category": "",
+          "sections": [
+            {
+              "title": "考え方",
+              "text": "作業の目的と必要な機能をHATとして扱い、役割の境界を確認する設計です。",
+              "links": [
+                {
+                  "title": "使い方を読む",
+                  "href": "/docs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/features/local-first",
+          "title": "手元で使う",
+          "label": "手元で使う",
+          "summary": "CLIをローカルに置き、iHATを通して必要なHATの配布版を取得・検証する構成です。",
+          "kind": "page",
+          "status": "published",
+          "category": "",
+          "sections": [
+            {
+              "title": "考え方",
+              "text": "CLIをローカルに置き、iHATを通して必要なHATの配布版を取得・検証する構成です。",
+              "links": [
+                {
+                  "title": "使い方を読む",
+                  "href": "/docs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/features/permissions",
+          "title": "実行を確かめる",
+          "label": "実行を確かめる",
+          "summary": "インストールと操作の許可を分け、対象と権限を確認して作業を進める設計です。",
+          "kind": "page",
+          "status": "published",
+          "category": "",
+          "sections": [
+            {
+              "title": "考え方",
+              "text": "インストールと操作の許可を分け、対象と権限を確認して作業を進める設計です。",
+              "links": [
+                {
+                  "title": "使い方を読む",
+                  "href": "/docs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/use-cases",
+          "title": "活用シーン",
+          "label": "活用シーン",
+          "summary": "情報と作業の目的に合わせて考える。",
+          "kind": "page",
+          "status": "published",
+          "category": "",
+          "sections": [
+            {
+              "title": "役割を選ぶ",
+              "text": "作業の目的と必要な機能をHATとして扱い、役割の境界を確認する設計です。",
+              "links": [
+                {
+                  "title": "役割を選ぶ",
+                  "href": "/features/roles",
+                  "summary": "作業の目的と必要な機能をHATとして扱い、役割の境界を確認する設計です。"
+                }
+              ]
+            },
+            {
+              "title": "手元で使う",
+              "text": "CLIをローカルに置き、iHATを通して必要なHATの配布版を取得・検証する構成です。",
+              "links": [
+                {
+                  "title": "手元で使う",
+                  "href": "/features/local-first",
+                  "summary": "CLIをローカルに置き、iHATを通して必要なHATの配布版を取得・検証する構成です。"
+                }
+              ]
+            },
+            {
+              "title": "実行を確かめる",
+              "text": "インストールと操作の許可を分け、対象と権限を確認して作業を進める設計です。",
+              "links": [
+                {
+                  "title": "実行を確かめる",
+                  "href": "/features/permissions",
+                  "summary": "インストールと操作の許可を分け、対象と権限を確認して作業を進める設計です。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/download",
+          "title": "ダウンロードと導入",
+          "label": "ダウンロードと導入",
+          "summary": "使い方と配布情報を確認する。",
+          "kind": "page",
+          "status": "published",
+          "category": "",
+          "sections": [
+            {
+              "title": "提供状況",
+              "text": "一般向けの配布を準備しています。利用可能な版と対応環境を、配布開始時に案内します。",
+              "links": [
+                {
+                  "title": "利用ガイド",
+                  "href": "/docs"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": []
+    },
+    "en": {
+      "brand": "Hatter",
+      "caption": "",
+      "origin": "https://hatter.ihat.online",
+      "locale": "en",
+      "accent": "#007baa",
+      "icon": "/brand/icon.png",
+      "navigation": [
+        {
+          "title": "Features",
+          "href": "/features"
+        },
+        {
+          "title": "Use cases",
+          "href": "/use-cases"
+        },
+        {
+          "title": "Docs",
+          "href": "/docs"
+        },
+        {
+          "title": "Download",
+          "href": "/download"
+        },
+        {
+          "title": "Journal",
+          "href": "/journal"
+        }
+      ],
+      "pages": [
+        {
+          "path": "/docs",
+          "title": "Guides and documentation",
+          "summary": "Guides to capabilities and usage.",
+          "sections": [
+            {
+              "title": "Getting started",
+              "text": "Start with your goal and the capabilities you need.",
+              "links": [
+                {
+                  "title": "Getting started",
+                  "href": "/docs/getting-started"
+                },
+                {
+                  "title": "Security guide",
+                  "href": "/security"
+                }
+              ]
+            }
+          ],
+          "kind": "page",
+          "label": "Guides and documentation",
+          "category": "",
+          "status": "published"
+        },
+        {
+          "path": "/docs/getting-started",
+          "title": "Find a path before getting started.",
+          "summary": "A guide to capabilities, use cases and data boundaries.",
+          "sections": [
+            {
+              "title": "Choose a goal",
+              "text": "Explore the capability or use-case pages for the work you have in mind.",
+              "links": [
+                {
+                  "title": "Explore features",
+                  "href": "/features"
+                }
+              ]
+            },
+            {
+              "title": "Review usage conditions",
+              "text": "Check the supported environment, license and available release of the software you select.",
+              "links": []
+            }
+          ],
+          "kind": "page",
+          "label": "Find a path before getting started.",
+          "category": "",
+          "status": "published"
+        },
+        {
+          "path": "/journal",
+          "title": "Ideas and practice.",
+          "summary": "Writing about design, development and the thoughtful use of AI.",
+          "sections": [
+            {
+              "title": "Explore by topic",
+              "text": "Explore the related guides while new stories are being prepared.",
+              "links": [
+                {
+                  "title": "Design and usage",
+                  "href": "/docs"
+                },
+                {
+                  "title": "Information boundaries",
+                  "href": "/security"
+                }
+              ]
+            }
+          ],
+          "kind": "journal",
+          "label": "Ideas and practice.",
+          "category": "",
+          "status": "published"
+        },
+        {
+          "path": "/privacy",
+          "title": "Privacy",
+          "summary": "How information is handled on this site.",
+          "sections": [
+            {
+              "title": "Browsing information",
+              "text": "This site serves static pages. The hosting provider processes connection information, including IP addresses, for delivery and security. No site-operated analytics or login is installed.",
+              "links": []
+            },
+            {
+              "title": "External sites",
+              "text": "External sites have their own privacy policies.",
+              "links": []
+            }
+          ],
+          "kind": "page",
+          "label": "Privacy",
+          "category": "",
+          "status": "published"
+        },
+        {
+          "path": "/security",
+          "title": "Use tools with confidence.",
+          "summary": "Principles for understanding information and operation boundaries.",
+          "sections": [
+            {
+              "title": "Protect credentials",
+              "text": "Do not include passwords, tokens or personal data in public issues or inquiries.",
+              "links": []
+            },
+            {
+              "title": "Review before operating",
+              "text": "Check targets and permissions and authorize only what is needed. Review the guide and security policy for each product.",
+              "links": []
+            }
+          ],
+          "kind": "page",
+          "label": "Use tools with confidence.",
+          "category": "",
+          "status": "published"
+        },
+        {
+          "path": "/sitemap",
+          "title": "Sitemap",
+          "summary": "Find a page by name.",
+          "sections": [],
+          "kind": "page",
+          "label": "Sitemap",
+          "category": "",
+          "status": "published"
+        },
+        {
+          "path": "/",
+          "title": "AI-assisted work.\nYour local workspace.",
+          "label": "Hatter",
+          "summary": "A local-first workspace for AI-assisted work with explicit roles and permissions.",
+          "kind": "home",
+          "status": "published",
+          "category": "",
+          "sections": [
+            {
+              "title": "Capabilities",
+              "text": "Explore capabilities and usage by purpose.",
+              "links": [
+                {
+                  "title": "Choose a role",
+                  "href": "/features/roles",
+                  "summary": "Use HATs to describe the purpose and capabilities of work with explicit role boundaries."
+                },
+                {
+                  "title": "Work locally",
+                  "href": "/features/local-first",
+                  "summary": "Keep the CLI local and acquire and verify selected HAT releases through iHAT."
+                },
+                {
+                  "title": "Review execution",
+                  "href": "/features/permissions",
+                  "summary": "Keep installation separate from authorization and review the targets and permissions of work."
+                }
+              ]
+            },
+            {
+              "title": "Before getting started",
+              "text": "Read the guides and check available distributions.",
+              "links": [
+                {
+                  "title": "Read the guides",
+                  "href": "/docs"
+                },
+                {
+                  "title": "Distributions",
+                  "href": "/download"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/features",
+          "title": "Capabilities and principles",
+          "label": "Capabilities and principles",
+          "summary": "A local-first workspace for AI-assisted work with explicit roles and permissions.",
+          "kind": "page",
+          "status": "published",
+          "category": "",
+          "sections": [
+            {
+              "title": "Choose a role",
+              "text": "Use HATs to describe the purpose and capabilities of work with explicit role boundaries.",
+              "links": [
+                {
+                  "title": "Choose a role",
+                  "href": "/features/roles",
+                  "summary": "Use HATs to describe the purpose and capabilities of work with explicit role boundaries."
+                }
+              ]
+            },
+            {
+              "title": "Work locally",
+              "text": "Keep the CLI local and acquire and verify selected HAT releases through iHAT.",
+              "links": [
+                {
+                  "title": "Work locally",
+                  "href": "/features/local-first",
+                  "summary": "Keep the CLI local and acquire and verify selected HAT releases through iHAT."
+                }
+              ]
+            },
+            {
+              "title": "Review execution",
+              "text": "Keep installation separate from authorization and review the targets and permissions of work.",
+              "links": [
+                {
+                  "title": "Review execution",
+                  "href": "/features/permissions",
+                  "summary": "Keep installation separate from authorization and review the targets and permissions of work."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/features/roles",
+          "title": "Choose a role",
+          "label": "Choose a role",
+          "summary": "Use HATs to describe the purpose and capabilities of work with explicit role boundaries.",
+          "kind": "page",
+          "status": "published",
+          "category": "",
+          "sections": [
+            {
+              "title": "The approach",
+              "text": "Use HATs to describe the purpose and capabilities of work with explicit role boundaries.",
+              "links": [
+                {
+                  "title": "Read the guide",
+                  "href": "/docs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/features/local-first",
+          "title": "Work locally",
+          "label": "Work locally",
+          "summary": "Keep the CLI local and acquire and verify selected HAT releases through iHAT.",
+          "kind": "page",
+          "status": "published",
+          "category": "",
+          "sections": [
+            {
+              "title": "The approach",
+              "text": "Keep the CLI local and acquire and verify selected HAT releases through iHAT.",
+              "links": [
+                {
+                  "title": "Read the guide",
+                  "href": "/docs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/features/permissions",
+          "title": "Review execution",
+          "label": "Review execution",
+          "summary": "Keep installation separate from authorization and review the targets and permissions of work.",
+          "kind": "page",
+          "status": "published",
+          "category": "",
+          "sections": [
+            {
+              "title": "The approach",
+              "text": "Keep installation separate from authorization and review the targets and permissions of work.",
+              "links": [
+                {
+                  "title": "Read the guide",
+                  "href": "/docs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/use-cases",
+          "title": "Use cases",
+          "label": "Use cases",
+          "summary": "Start with the purpose of information and work.",
+          "kind": "page",
+          "status": "published",
+          "category": "",
+          "sections": [
+            {
+              "title": "Choose a role",
+              "text": "Use HATs to describe the purpose and capabilities of work with explicit role boundaries.",
+              "links": [
+                {
+                  "title": "Choose a role",
+                  "href": "/features/roles",
+                  "summary": "Use HATs to describe the purpose and capabilities of work with explicit role boundaries."
+                }
+              ]
+            },
+            {
+              "title": "Work locally",
+              "text": "Keep the CLI local and acquire and verify selected HAT releases through iHAT.",
+              "links": [
+                {
+                  "title": "Work locally",
+                  "href": "/features/local-first",
+                  "summary": "Keep the CLI local and acquire and verify selected HAT releases through iHAT."
+                }
+              ]
+            },
+            {
+              "title": "Review execution",
+              "text": "Keep installation separate from authorization and review the targets and permissions of work.",
+              "links": [
+                {
+                  "title": "Review execution",
+                  "href": "/features/permissions",
+                  "summary": "Keep installation separate from authorization and review the targets and permissions of work."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/download",
+          "title": "Downloads and installation",
+          "label": "Downloads and installation",
+          "summary": "Find usage and distribution information.",
+          "kind": "page",
+          "status": "published",
+          "category": "",
+          "sections": [
+            {
+              "title": "Availability",
+              "text": "Public distributions are being prepared. Available releases and supported environments will be listed when released.",
+              "links": [
+                {
+                  "title": "Usage guide",
+                  "href": "/docs"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": []
+    }
+  }
+}
