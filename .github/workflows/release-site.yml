@@ -32,6 +32,7 @@ jobs:
       sha256: ${{ steps.archive.outputs.sha256 }}
       app: ${{ steps.plan.outputs.app }}
       install: ${{ steps.plan.outputs.install }}
+      deploy-enabled: ${{ steps.plan.outputs.deploy-enabled }}
       environment: ${{ steps.plan.outputs.environment }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -79,7 +80,7 @@ jobs:
           fi
   deploy:
     needs: prepare
-    if: vars.SITE_DEPLOY_ENABLED == 'true'
+    if: vars.SITE_DEPLOY_ENABLED == 'true' && needs.prepare.outputs.deploy-enabled == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     environment: ${{ needs.prepare.outputs.environment }}

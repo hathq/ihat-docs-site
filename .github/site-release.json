@@ -35,7 +35,8 @@
       "installDirectory": ".",
       "appDirectory": "products/hatter",
       "assetDirectory": "products/hatter/.output/public",
-      "buildKind": "nuxt-generate"
+      "buildKind": "nuxt-generate",
+      "deploymentEnabled": false
     }
   ]
 }
