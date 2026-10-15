@@ -16,7 +16,7 @@ class SiteReleaseTests(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
         (self.root / 'site.json').write_text('{"origin":"https://example.org"}')
-        self.site = {'id':'example','version':'0.1.0','account':'a'*32,'worker':'example-site',
+        self.site = {'id':'example','version':'0.1.0','account':'a'*32,'zone':'c'*32,'worker':'example-site',
             'environment':'site-production-example','origin':'https://example.org','domain':'example.org',
             'siteConfig':'site.json','appDirectory':'.','assetDirectory':'public','buildKind':'single'}
         self.contract = {'schemaVersion':1,'repository':'example/site','defaultBranch':'main',
@@ -68,6 +68,40 @@ class SiteReleaseTests(unittest.TestCase):
         with patch.dict('os.environ',{**self.env,'GH_TOKEN':'synthetic-test-token'}),patch('site_release.request',return_value={'protection_rules':[]}) as request,patch('site_release.subprocess.run') as run:
             with self.assertRaises(ValueError):deploy(self.root,self.contract,self.site,self.root/'archive',digest)
             self.assertEqual(request.call_count,1);run.assert_not_called()
+
+    def provider(self, already):
+        def response(url, token=None):
+            if '/environments/' in url:
+                return {'protection_rules':[{'type':'required_reviewers','reviewers':[{'id':1}]}]}
+            if url.endswith('/zones/'+'c'*32):
+                return {'success':True,'result':{'name':'example.org','account':{'id':'a'*32},'status':'active'}}
+            if '/dns_records?' in url:
+                return {'success':True,'result':[],'result_info':{'total_pages':1}}
+            if url.endswith('/domains'):
+                return {'success':True,'result':[{'id':'domain','hostname':'example.org','service':'example-site','environment':'production'}]}
+            if url.endswith('/deployments'):
+                return {'success':True,'result':{'deployments':[{'versions':[{'version_id':'version','percentage':100}]}]}}
+            if url.endswith('/subdomain'):
+                return {'success':True,'result':{'enabled':False,'previews_enabled':False}}
+            if url=='https://example.org/.well-known/release.json':
+                return {'site':'example','purpose':'production','source_sha':'b'*40 if already else 'a'*40,**({'version':'0.1.0'} if already else {})}
+            raise AssertionError('Unexpected API: '+url)
+        return response
+
+    def test_rerun_with_old_remote_marker_cannot_repeat_unknown_deployment(self):
+        _,digest=self.prepare()
+        env={**self.env,'GH_TOKEN':'synthetic-test-token','CLOUDFLARE_API_TOKEN':'synthetic-fixture-token','GITHUB_EVENT_NAME':'push','GITHUB_RUN_ATTEMPT':'2'}
+        with patch.dict('os.environ',env),patch('site_release.request',side_effect=self.provider(False)),patch('site_release.subprocess.run') as run:
+            with self.assertRaises(ValueError):deploy(self.root,self.contract,self.site,self.root/'archive',digest)
+            run.assert_not_called()
+
+    def test_matching_production_is_verified_without_redeployment_on_manual_recovery(self):
+        _,digest=self.prepare()
+        env={**self.env,'GH_TOKEN':'synthetic-test-token','CLOUDFLARE_API_TOKEN':'synthetic-fixture-token','GITHUB_EVENT_NAME':'workflow_dispatch','GITHUB_RUN_ATTEMPT':'2'}
+        with patch.dict('os.environ',env),patch('site_release.request',side_effect=self.provider(True)),patch('site_release.verify_assets') as verify,patch('site_release.subprocess.run') as run:
+            deploy(self.root,self.contract,self.site,self.root/'archive',digest)
+            verify.assert_called_once();run.assert_not_called()
+        self.assertTrue(json.loads((self.root/'archive/acceptance.json').read_text())['verify_only'])
 
 
 if __name__ == '__main__':

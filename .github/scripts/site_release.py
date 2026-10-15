@@ -42,6 +42,8 @@ def select(root, contract, tag):
         raise ValueError('Invalid site identity/version')
     if not re.fullmatch(r'[a-f0-9]{32}', site['account']) or not re.fullmatch(r'[a-z0-9-]+', site['worker']):
         raise ValueError('Invalid Cloudflare identity')
+    if not re.fullmatch(r'[a-f0-9]{32}', site['zone']):
+        raise ValueError('Invalid owned zone')
     if site['origin'] != 'https://' + site['domain'] or not re.fullmatch(r'[a-z0-9.-]+', site['domain']):
         raise ValueError('Invalid production origin')
     for key in ['appDirectory', 'assetDirectory', 'siteConfig']:
@@ -165,6 +167,22 @@ def deploy(root, contract, site, output, expected):
         raise ValueError('Effective required reviewers missing; local-only release remains necessary')
     token = os.environ['CLOUDFLARE_API_TOKEN']
     prefix = f"https://api.cloudflare.com/client/v4/accounts/{site['account']}/workers"
+    zone_url = f"https://api.cloudflare.com/client/v4/zones/{site['zone']}"
+    zone = request(zone_url, token)
+    if zone.get('success') is not True or zone['result']['name'] != site['domain'] or zone['result']['account']['id'] != site['account'] or zone['result']['status'] != 'active':
+        raise ValueError('Owned active zone mismatch')
+    def dns_digest():
+        records = []
+        for page in range(1, 100):
+            data = request(zone_url + f'/dns_records?per_page=100&page={page}', token)
+            if data.get('success') is not True or not isinstance(data.get('result'), list):
+                raise ValueError('DNS observation unavailable')
+            records.extend(data['result'])
+            if data.get('result_info', {}).get('total_pages', 100) <= page or len(data['result']) < 100:
+                payload = json.dumps(sorted(records, key=lambda r:r['id']), sort_keys=True, separators=(',', ':'))
+                return hashlib.sha256(payload.encode()).hexdigest()
+        raise ValueError('DNS observation incomplete')
+    original_dns = dns_digest()
     def domains():
         data = request(prefix + '/domains', token)
         if data.get('success') is not True or not isinstance(data.get('result'), list) or data.get('result_info', {}).get('total_pages', 1) > 1 or data.get('result_info', {}).get('total_count', 0) > len(data['result']):
@@ -195,12 +213,20 @@ def deploy(root, contract, site, output, expected):
             raise ValueError('Only initial tag push may deploy; later runs verify existing bytes only')
         # A fresh run is not evidence that an earlier deployment failed. Refuse
         # replay after a matching source/version; only verify those bytes above.
+        (output / 'operation.json').write_text(json.dumps({'state':'deployment-starting; do not replay','site':site['id'],'source':receipt['source']}) + '\n')
         subprocess.run([str(wrangler), 'deploy', '--config', str(output / 'wrangler.json')], cwd=root, check=True)
     verify_assets(site['origin'], receipt['files'])
     if before != domains():
         raise ValueError('Custom domain binding changed; do not replay deployment')
+    if dns_digest() != original_dns:
+        raise ValueError('DNS changed; do not replay deployment')
+    exposure = request(prefix + '/scripts/' + site['worker'] + '/subdomain', token)
+    if exposure.get('success') is not True or exposure['result'].get('enabled') is not False or exposure['result'].get('previews_enabled') is not False:
+        raise ValueError('Unexpected workers.dev or preview exposure')
     (output / 'acceptance.json').write_text(json.dumps({'site':site['id'],'source':receipt['source'],'version':site['version'],
-        'origin':site['origin'],'matched_assets':len(receipt['files']),'archive_sha256':expected,'custom_domains_unchanged':True}) + '\n')
+        'origin':site['origin'],'matched_assets':len(receipt['files']),'archive_sha256':expected,'custom_domains_unchanged':True,
+        'dns_unchanged':True,'workers_dev_enabled':False,'preview_urls_enabled':False,'verify_only':already}) + '\n')
+    (output / 'operation.json').write_text('{"state":"complete"}\n')
 
 
 def main():
