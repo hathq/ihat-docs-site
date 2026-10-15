@@ -15,3 +15,8 @@ credential or provider setting is created by this source change.
 A shared install root is explicit. The application is typechecked/generated from
 that owner's locked dependency tree; no sibling checkout is needed. Unknown
 zone/host, path escapes, changed archive bytes and unverified replay are refused.
+
+The new product target has `deploymentEnabled: false`. Even an already enabled
+parent repository cannot enter its production Environment or deploy this target
+until the initial provider/security acceptance is recorded and this flag is
+reviewed. Candidate build/pack remains independent of that activation.

@@ -48,6 +48,12 @@ class SiteReleaseTests(unittest.TestCase):
             site['installDirectory'] = directory
             with self.assertRaises(ValueError):select(self.root,self.contract,'site/example/v0.1.0')
 
+    def test_new_product_targets_remain_explicitly_disabled(self):
+        self.contract['sites'][0]['deploymentEnabled'] = False
+        self.assertFalse(select(self.root,self.contract,'site/example/v0.1.0')['deploymentEnabled'])
+        self.contract['sites'][0]['deploymentEnabled'] = 'false'
+        with self.assertRaises(ValueError):select(self.root,self.contract,'site/example/v0.1.0')
+
     def test_output_traversal_symlink_and_environment_output_injection_rejected(self):
         for key,value in [('assetDirectory','../public'),('appDirectory','./\nother=bad'),('environment','site-production-x\nother=bad')]:
             contract=copy.deepcopy(self.contract);contract['sites'][0][key]=value

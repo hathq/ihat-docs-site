@@ -36,6 +36,8 @@ def select(root, contract, tag):
     if len(matches) != 1:
         raise ValueError('Tag must select exactly one site and its reviewed version')
     site = matches[0]
+    if not isinstance(site.get('deploymentEnabled', True), bool):
+        raise ValueError('Deployment readiness must be explicit boolean')
     if not re.fullmatch(r'site-production-[a-z0-9-]+', site['environment']):
         raise ValueError('Invalid production Environment')
     if not re.fullmatch(r'[a-z0-9-]+', site['id']) or not re.fullmatch(r'(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)', site['version']):
@@ -255,7 +257,7 @@ def main():
     site = select(root, contract, os.environ['GITHUB_REF_NAME'])
     if mode == 'plan':
         admit(root, contract, os.environ)
-        for key, value in {'site':site['id'],'app':site['appDirectory'],'install':site.get('installDirectory', site['appDirectory']),'environment':site['environment']}.items():
+        for key, value in {'site':site['id'],'app':site['appDirectory'],'install':site.get('installDirectory', site['appDirectory']),'environment':site['environment'],'deploy-enabled':'true' if site.get('deploymentEnabled', True) else 'false'}.items():
             with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
                 out.write(key + '=' + value + '\n')
     elif mode == 'pack':
