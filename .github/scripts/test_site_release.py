@@ -31,6 +31,23 @@ class SiteReleaseTests(unittest.TestCase):
         (self.root / 'site.json').write_text('{"origin":"https://other.example"}')
         with self.assertRaises(ValueError):select(self.root,self.contract,'site/example/v0.1.0')
 
+    def test_subdomain_requires_explicit_parent_zone_on_a_label_boundary(self):
+        site = self.contract['sites'][0]
+        site.update(domain='product.example.org', origin='https://product.example.org', zoneName='example.org')
+        (self.root/'site.json').write_text('{"origin":"https://product.example.org"}')
+        self.assertEqual(select(self.root,self.contract,'site/example/v0.1.0'),site)
+        for zone in ['ample.org', 'other.org', 'example.org/path', '.example.org', 'org.evil']:
+            site['zoneName'] = zone
+            with self.assertRaises(ValueError):select(self.root,self.contract,'site/example/v0.1.0')
+
+    def test_shared_install_root_is_explicit_and_cannot_escape_the_owner(self):
+        site = self.contract['sites'][0]
+        site.update(appDirectory='products/example', installDirectory='.')
+        self.assertEqual(select(self.root,self.contract,'site/example/v0.1.0'),site)
+        for directory in ['../sibling', 'unrelated', './\nother=bad']:
+            site['installDirectory'] = directory
+            with self.assertRaises(ValueError):select(self.root,self.contract,'site/example/v0.1.0')
+
     def test_output_traversal_symlink_and_environment_output_injection_rejected(self):
         for key,value in [('assetDirectory','../public'),('appDirectory','./\nother=bad'),('environment','site-production-x\nother=bad')]:
             contract=copy.deepcopy(self.contract);contract['sites'][0][key]=value

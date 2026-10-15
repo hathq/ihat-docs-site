@@ -46,6 +46,12 @@ def select(root, contract, tag):
         raise ValueError('Invalid owned zone')
     if site['origin'] != 'https://' + site['domain'] or not re.fullmatch(r'[a-z0-9.-]+', site['domain']):
         raise ValueError('Invalid production origin')
+    zone_name = site.get('zoneName', site['domain'])
+    if not re.fullmatch(r'[a-z0-9]+(?:[.-][a-z0-9]+)*', zone_name) or not (site['domain'] == zone_name or site['domain'].endswith('.' + zone_name)):
+        raise ValueError('Site domain must belong to the explicit owned zone')
+    install = owned(root, site.get('installDirectory', site['appDirectory']))
+    if not owned(root, site['appDirectory']).resolve().is_relative_to(install.resolve()):
+        raise ValueError('Install root must contain the selected application')
     for key in ['appDirectory', 'assetDirectory', 'siteConfig']:
         owned(root, site[key])
     if read(owned(root, site['siteConfig']))['origin'] != site['origin']:
@@ -160,7 +166,7 @@ def verify_assets(origin, expected):
 
 
 def deployment_tool(root, site):
-    app = owned(root, site['appDirectory'])
+    app = owned(root, site.get('installDirectory', site['appDirectory']))
     manifest = read(app / 'package.json')
     version = manifest.get('devDependencies', {}).get('wrangler', '')
     binary = app / 'node_modules/.bin/wrangler'
@@ -181,7 +187,7 @@ def deploy(root, contract, site, output, expected):
     prefix = f"https://api.cloudflare.com/client/v4/accounts/{site['account']}/workers"
     zone_url = f"https://api.cloudflare.com/client/v4/zones/{site['zone']}"
     zone = request(zone_url, token)
-    if zone.get('success') is not True or zone['result']['name'] != site['domain'] or zone['result']['account']['id'] != site['account'] or zone['result']['status'] != 'active':
+    if zone.get('success') is not True or zone['result']['name'] != site.get('zoneName', site['domain']) or zone['result']['account']['id'] != site['account'] or zone['result']['status'] != 'active':
         raise ValueError('Owned active zone mismatch')
     def dns_digest():
         records = []
@@ -213,7 +219,7 @@ def deploy(root, contract, site, output, expected):
               'routes':[{'pattern':d['hostname'],'custom_domain':True} for d in before if d['service']==site['worker']]}
     (output / 'wrangler.json').write_text(json.dumps(config) + '\n')
     # Uses this repo's committed Wrangler dependency. No install/build receives the CF token.
-    wrangler = owned(root, site['appDirectory']) / 'node_modules/.bin/wrangler'
+    wrangler = owned(root, site.get('installDirectory', site['appDirectory'])) / 'node_modules/.bin/wrangler'
     current = request(site['origin'] + '/.well-known/release.json')
     if current.get('site') != site['id'] or current.get('purpose') != 'production':
         raise ValueError('Existing production is not this owned static site')
@@ -249,7 +255,7 @@ def main():
     site = select(root, contract, os.environ['GITHUB_REF_NAME'])
     if mode == 'plan':
         admit(root, contract, os.environ)
-        for key, value in {'site':site['id'],'app':site['appDirectory'],'environment':site['environment']}.items():
+        for key, value in {'site':site['id'],'app':site['appDirectory'],'install':site.get('installDirectory', site['appDirectory']),'environment':site['environment']}.items():
             with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
                 out.write(key + '=' + value + '\n')
     elif mode == 'pack':
