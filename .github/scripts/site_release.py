@@ -147,7 +147,9 @@ def verify_assets(origin, expected):
         name, digest = item
         path = name[:-10] if name.endswith('index.html') else name
         for attempt in range(5):
-            response = subprocess.run(['curl', '--fail', '--silent', '--show-error', '--connect-timeout', '5', '--max-time', '30', '--max-filesize', '104857600', origin + '/' + urllib.parse.quote(path)], capture_output=True)
+            # Nuxt's .html assets redirect to canonical paths; generated 404
+            # pages may legitimately retain 404 status. Admit only exact bytes.
+            response = subprocess.run(['curl', '--silent', '--show-error', '--location', '--max-redirs', '5', '--proto-redir', '=https', '--connect-timeout', '5', '--max-time', '30', '--max-filesize', '104857600', origin + '/' + urllib.parse.quote(path)], capture_output=True)
             if response.returncode == 0 and hashlib.sha256(response.stdout).hexdigest() == digest:
                 return
             if attempt < 4:

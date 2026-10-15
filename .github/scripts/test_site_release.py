@@ -7,7 +7,8 @@ import tarfile
 import tempfile
 import unittest
 from unittest.mock import patch
-from site_release import select, pack, unpack, admit, deploy
+from site_release import select, pack, unpack, admit, deploy, verify_assets
+from subprocess import CompletedProcess
 
 
 class SiteReleaseTests(unittest.TestCase):
@@ -102,6 +103,16 @@ class SiteReleaseTests(unittest.TestCase):
             deploy(self.root,self.contract,self.site,self.root/'archive',digest)
             verify.assert_called_once();run.assert_not_called()
         self.assertTrue(json.loads((self.root/'archive/acceptance.json').read_text())['verify_only'])
+
+    def test_asset_readback_accepts_only_prepared_bytes_after_bounded_stale_reads(self):
+        expected={'404.html':hashlib.sha256(b'approved fallback').hexdigest()}
+        responses=[CompletedProcess([],0,b'stale page'),CompletedProcess([],0,b'approved fallback')]
+        with patch('site_release.subprocess.run',side_effect=responses) as run,patch('site_release.time.sleep'):
+            verify_assets('https://example.org',expected)
+            self.assertEqual(run.call_count,2)
+        with patch('site_release.subprocess.run',return_value=CompletedProcess([],0,b'wrong bytes')) as run,patch('site_release.time.sleep'):
+            with self.assertRaises(ValueError):verify_assets('https://example.org',expected)
+            self.assertEqual(run.call_count,5)
 
 
 if __name__ == '__main__':
