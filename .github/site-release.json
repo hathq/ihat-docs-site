@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "repository": "hathq/ihat-docs-site",
+  "defaultBranch": "main",
+  "requiredWorkflows": [
+    "site-source.yml",
+    "oss-policy.yml"
+  ],
+  "sites": [
+    {
+      "id": "ihat-docs",
+      "version": "0.1.0",
+      "account": "0655772369a7b3425e3398313a36521b",
+      "worker": "ihat-docs-site",
+      "domain": "ihat.online",
+      "origin": "https://ihat.online",
+      "environment": "site-production-ihat-docs",
+      "siteConfig": "site.config.json",
+      "appDirectory": ".",
+      "assetDirectory": ".output/public",
+      "buildKind": "nuxt-generate"
+    }
+  ]
+}

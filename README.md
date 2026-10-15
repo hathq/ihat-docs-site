@@ -36,3 +36,6 @@ pnpm build
 Dependency updates: [repository policy](docs/dependency-updates.md).
 
 Security maintenance uses `@nuxtjp/dependency-security` with committed patches and lockfile. CI tests the actually installed dependencies after a frozen install. Version-only braces/node-forge alerts remain visible until upstream releases or a reviewed resolution; source acceptance and production deployment are separate.
+
+
+サイトの独立したタグ公開・承認・有効化条件: [公開手順](docs/site-release.ja.md)。
