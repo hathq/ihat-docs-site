@@ -14,8 +14,11 @@
     "build": "nuxt build",
     "preview": "nuxt preview --host 127.0.0.1",
     "typecheck": "nuxt typecheck",
-    "test": "node --test",
-    "validate:content": "nuxtjp-localized-site validate --content-root ."
+    "test": "node --test && pnpm run test:site-structure && node products/hatter/site/check.mjs",
+    "validate:content": "nuxtjp-localized-site validate --content-root .",
+    "test:site-structure": "node site/check.mjs",
+    "product:hatter:check": "node products/hatter/site/check.mjs && nuxt typecheck products/hatter",
+    "product:hatter:build": "nuxt generate products/hatter"
   },
   "dependencies": {
     "@nuxtjp/localized-site": "0.2.6",
