@@ -26,16 +26,12 @@
         {
           "title": "ダウンロード",
           "href": "/download"
-        },
-        {
-          "title": "読みもの",
-          "href": "/journal"
         }
       ],
       "pages": [
         {
           "path": "/docs",
-          "title": "ガイドとドキュメント",
+          "title": "Hatterのガイド",
           "summary": "機能と使い方を紹介するガイド。",
           "sections": [
             {
@@ -54,7 +50,7 @@
             }
           ],
           "kind": "page",
-          "label": "ガイドとドキュメント",
+          "label": "Hatterのガイド",
           "category": "",
           "status": "published"
         },
@@ -171,8 +167,8 @@
           "category": "",
           "sections": [
             {
-              "title": "できること",
-              "text": "目的から、機能と使い方をご覧ください。",
+              "title": "ローカルで使う拡張環境",
+              "text": "HATの役割を選び、配布版を確認し、手元の環境へ取り込む。Hatterの使い方と設計を紹介します。",
               "links": [
                 {
                   "title": "役割を選ぶ",
@@ -192,8 +188,8 @@
               ]
             },
             {
-              "title": "使い始める前に",
-              "text": "利用ガイドと、提供される配布版の情報をご確認ください。",
+              "title": "取得から操作までの境界を確認する",
+              "text": "配布情報はiHATを経由し、Hatterがローカルで同期・検証する構成です。インストールと実行の許可は別に扱います。",
               "links": [
                 {
                   "title": "ガイドを読む",
@@ -316,9 +312,9 @@
         },
         {
           "path": "/use-cases",
-          "title": "活用シーン",
-          "label": "活用シーン",
-          "summary": "情報と作業の目的に合わせて考える。",
+          "title": "手元の作業環境を拡張する",
+          "label": "手元の作業環境を拡張する",
+          "summary": "各場面から、Hatterの使い方と関連するガイドへ進めます。",
           "kind": "page",
           "status": "published",
           "category": "",
@@ -380,7 +376,11 @@
           ]
         }
       ],
-      "resources": []
+      "resources": [],
+      "secondaryAction": {
+        "title": "導入・ドキュメント",
+        "href": "/docs"
+      }
     },
     "en": {
       "brand": "Hatter",
@@ -405,16 +405,12 @@
         {
           "title": "Download",
           "href": "/download"
-        },
-        {
-          "title": "Journal",
-          "href": "/journal"
         }
       ],
       "pages": [
         {
           "path": "/docs",
-          "title": "Guides and documentation",
+          "title": "Hatter guides",
           "summary": "Guides to capabilities and usage.",
           "sections": [
             {
@@ -433,7 +429,7 @@
             }
           ],
           "kind": "page",
-          "label": "Guides and documentation",
+          "label": "Hatter guides",
           "category": "",
           "status": "published"
         },
@@ -550,8 +546,8 @@
           "category": "",
           "sections": [
             {
-              "title": "Capabilities",
-              "text": "Explore capabilities and usage by purpose.",
+              "title": "An extension environment on your machine",
+              "text": "Explore how Hatter selects HAT roles, verifies releases and brings extensions into a local environment.",
               "links": [
                 {
                   "title": "Choose a role",
@@ -571,8 +567,8 @@
               ]
             },
             {
-              "title": "Before getting started",
-              "text": "Read the guides and check available distributions.",
+              "title": "Understand the path from retrieval to operation",
+              "text": "Distribution flows through iHAT for local synchronization and verification by Hatter. Installation does not grant permission to execute.",
               "links": [
                 {
                   "title": "Read the guides",
@@ -695,9 +691,9 @@
         },
         {
           "path": "/use-cases",
-          "title": "Use cases",
-          "label": "Use cases",
-          "summary": "Start with the purpose of information and work.",
+          "title": "Extend your local working environment",
+          "label": "Extend your local working environment",
+          "summary": "Explore Hatter through specific scenarios and related guides.",
           "kind": "page",
           "status": "published",
           "category": "",
@@ -759,7 +755,11 @@
           ]
         }
       ],
-      "resources": []
+      "resources": [],
+      "secondaryAction": {
+        "title": "Setup & documentation",
+        "href": "/docs"
+      }
     }
   }
 }

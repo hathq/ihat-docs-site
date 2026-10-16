@@ -25,10 +25,6 @@
         {
           "title": "ドキュメント",
           "href": "/docs"
-        },
-        {
-          "title": "読みもの",
-          "href": "/journal"
         }
       ],
       "pages": [
@@ -38,8 +34,8 @@
           "summary": "HATの仕様と公開モジュールを探す入口。Hatterと組み合わせ、必要な役割をローカルの作業環境へ。",
           "sections": [
             {
-              "title": "目的から、次の一歩へ。",
-              "text": "関心のあるテーマから、機能と使い方をご覧ください。",
+              "title": "HATを知り、拡張のしくみを選ぶ",
+              "text": "目的、操作、必要な権限を確認してから使うために。仕様と公開モジュールを案内します。",
               "links": [
                 {
                   "title": "役割を定義する",
@@ -62,8 +58,8 @@
               ]
             },
             {
-              "title": "使い方をイメージする",
-              "text": "用途ごとに、取り組み方と選ぶ道具を整理しています。",
+              "title": "HAT・iHAT・Hatterの役割",
+              "text": "HATは拡張の単位、iHATは配布情報の入口、Hatterは手元の利用環境です。取得と検証、実行の許可を分けて扱います。",
               "links": [
                 {
                   "title": "活用シーンを見る",
@@ -316,8 +312,8 @@
         },
         {
           "path": "/use-cases",
-          "title": "使う場面から、考える。",
-          "summary": "目的に合わせて、情報の扱いと道具の選び方を整理します。",
+          "title": "HATを選び、手元で利用する",
+          "summary": "各場面から、iHAT Onlineの使い方と関連するガイドへ進めます。",
           "sections": [
             {
               "title": "役割を定義する",
@@ -354,7 +350,7 @@
             }
           ],
           "kind": "page",
-          "label": "使う場面から、考える。",
+          "label": "HATを選び、手元で利用する",
           "category": "",
           "status": "published"
         },
@@ -397,7 +393,7 @@
         },
         {
           "path": "/docs",
-          "title": "ガイドとドキュメント",
+          "title": "iHAT Onlineのガイド",
           "summary": "目的に合わせて、使い方と設計の考え方を確認できます。",
           "sections": [
             {
@@ -430,7 +426,7 @@
             }
           ],
           "kind": "page",
-          "label": "ガイドとドキュメント",
+          "label": "iHAT Onlineのガイド",
           "category": "",
           "status": "published"
         },
@@ -571,10 +567,6 @@
         {
           "title": "Docs",
           "href": "/docs"
-        },
-        {
-          "title": "Journal",
-          "href": "/journal"
         }
       ],
       "pages": [
@@ -584,8 +576,8 @@
           "summary": "An entry point to HAT specifications and public modules for a local-first Hatter workspace.",
           "sections": [
             {
-              "title": "Find your next step.",
-              "text": "Explore capabilities and guides by the work you want to do.",
+              "title": "Understand HAT and its extension model",
+              "text": "Explore specifications and public modules by their purpose, operations and required permissions.",
               "links": [
                 {
                   "title": "Define a role",
@@ -608,8 +600,8 @@
               ]
             },
             {
-              "title": "Explore the possibilities",
-              "text": "Find a workflow and the tools that fit your use case.",
+              "title": "HAT, iHAT and Hatter",
+              "text": "HAT defines an extension, iHAT provides the distribution entry point, and Hatter is the local environment. Retrieval, verification and permission to execute remain separate.",
               "links": [
                 {
                   "title": "Explore use cases",
@@ -862,8 +854,8 @@
         },
         {
           "path": "/use-cases",
-          "title": "Start with the work.",
-          "summary": "Explore approaches to organizing information and selecting tools.",
+          "title": "Choose HAT extensions for local use",
+          "summary": "Explore iHAT Online through specific scenarios and related guides.",
           "sections": [
             {
               "title": "Define a role",
@@ -900,7 +892,7 @@
             }
           ],
           "kind": "page",
-          "label": "Start with the work.",
+          "label": "Choose HAT extensions for local use",
           "category": "",
           "status": "published"
         },
@@ -943,7 +935,7 @@
         },
         {
           "path": "/docs",
-          "title": "Guides and documentation",
+          "title": "iHAT Online guides",
           "summary": "Explore usage guides and design principles.",
           "sections": [
             {
@@ -976,7 +968,7 @@
             }
           ],
           "kind": "page",
-          "label": "Guides and documentation",
+          "label": "iHAT Online guides",
           "category": "",
           "status": "published"
         },
