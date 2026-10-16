@@ -151,16 +151,19 @@ def unpack(archive, expected, destination):
 
 
 def verify_assets(origin, expected):
+    deadline = time.monotonic() + 120
     def one(item):
         name, digest = item
         path = name[:-10] if name.endswith('index.html') else name
-        for attempt in range(5):
+        for attempt in range(20):
+            if time.monotonic() >= deadline:
+                break
             # Nuxt's .html assets redirect to canonical paths; generated 404
             # pages may legitimately retain 404 status. Admit only exact bytes.
             response = subprocess.run(['curl', '--silent', '--show-error', '--location', '--max-redirs', '5', '--proto-redir', '=https', '--connect-timeout', '5', '--max-time', '30', '--max-filesize', '104857600', origin + '/' + urllib.parse.quote(path)], capture_output=True)
             if response.returncode == 0 and hashlib.sha256(response.stdout).hexdigest() == digest:
                 return
-            if attempt < 4:
+            if attempt < 19:
                 time.sleep(3)
         raise ValueError('Production asset verification failed')
     with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:

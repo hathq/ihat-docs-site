@@ -34,6 +34,9 @@ export function validateContent(data) {
       assert.ok(['page', 'home', 'catalog', 'journal', 'article'].includes(page.kind))
       if (page.kind === 'article') assert.ok(page.category && page.sections.length, 'empty published article')
       for (const section of page.sections) { assert.ok(section.title && section.text); section.links?.forEach(checkLink) }
+      if (page.path.startsWith('/hat/')) {
+        assert.ok(page.sections.some(section => section.links?.some(link => /^https:\/\/github\.com\/(hathq|neo-erp)\/hat-/.test(link.href))), `missing public HAT source: ${page.path}`)
+      }
     }
   }
   return { site: data.siteId, locales: 2, pages: paths.length * 2, brokenInternalLinks: 0, bundledDrafts: 0 }
