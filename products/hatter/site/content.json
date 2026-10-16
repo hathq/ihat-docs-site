@@ -56,27 +56,32 @@
         },
         {
           "path": "/docs/getting-started",
-          "title": "はじめる前に、道筋をつかむ。",
-          "summary": "機能、使う場面、データの扱いを確認するためのガイドです。",
+          "title": "導入前の確認",
+          "summary": "CLIの公開状況、HATの役割、ローカルでの検証について確認します。",
           "sections": [
             {
-              "title": "目的を選ぶ",
-              "text": "取り組む内容を機能や用途のページで確認します。",
+              "title": "1. 配布と対応環境を確認する",
+              "text": "公開CLIは準備中です。取得可能な版と対応環境が掲載されていることを確認してから導入してください。",
               "links": [
                 {
-                  "title": "機能を見る",
-                  "href": "/features"
+                  "title": "配布状況",
+                  "href": "/download"
                 }
               ]
             },
             {
-              "title": "利用条件を確認する",
-              "text": "導入するソフトウェアの対応環境、ライセンス、提供版を確認してください。",
+              "title": "2. 必要な役割を確認する",
+              "text": "目的に合うHATの役割、対象、必要な権限を確認します。取得することと実行を許可することは分けて扱います。",
+              "links": []
+            },
+            {
+              "title": "3. ローカルで検証する",
+              "text": "公開版の導入手順に従い、取得物の検証を終えてからローカルの作業対象と権限を設定します。",
               "links": []
             }
           ],
           "kind": "page",
-          "label": "はじめる前に、道筋をつかむ。",
+          "label": "導入前の確認",
           "category": "",
           "status": "published"
         },
@@ -364,14 +369,9 @@
           "category": "",
           "sections": [
             {
-              "title": "提供状況",
-              "text": "一般向けの配布を準備しています。利用可能な版と対応環境を、配布開始時に案内します。",
-              "links": [
-                {
-                  "title": "利用ガイド",
-                  "href": "/docs"
-                }
-              ]
+              "title": "公開CLIの配布準備中",
+              "text": "現在、このサイトではHatter CLIを配布していません。公開時に対応OS、版、取得先とhash・署名の検証方法を掲載します。",
+              "links": []
             }
           ]
         }
@@ -435,27 +435,32 @@
         },
         {
           "path": "/docs/getting-started",
-          "title": "Find a path before getting started.",
-          "summary": "A guide to capabilities, use cases and data boundaries.",
+          "title": "Before installation",
+          "summary": "Check CLI availability, HAT roles and local verification before installation.",
           "sections": [
             {
-              "title": "Choose a goal",
-              "text": "Explore the capability or use-case pages for the work you have in mind.",
+              "title": "1. Check availability and supported environments",
+              "text": "Public CLI distribution is being prepared. Begin installation only once an available version and supported environment are listed.",
               "links": [
                 {
-                  "title": "Explore features",
-                  "href": "/features"
+                  "title": "Distribution status",
+                  "href": "/download"
                 }
               ]
             },
             {
-              "title": "Review usage conditions",
-              "text": "Check the supported environment, license and available release of the software you select.",
+              "title": "2. Identify the required role",
+              "text": "Review the HAT role, targets and required permissions for your purpose. Acquiring a module and authorizing its execution are separate steps.",
+              "links": []
+            },
+            {
+              "title": "3. Verify locally",
+              "text": "Follow the released setup guide and verify the acquired files before configuring local work targets and permissions.",
               "links": []
             }
           ],
           "kind": "page",
-          "label": "Find a path before getting started.",
+          "label": "Before installation",
           "category": "",
           "status": "published"
         },
@@ -743,14 +748,9 @@
           "category": "",
           "sections": [
             {
-              "title": "Availability",
-              "text": "Public distributions are being prepared. Available releases and supported environments will be listed when released.",
-              "links": [
-                {
-                  "title": "Usage guide",
-                  "href": "/docs"
-                }
-              ]
+              "title": "Public CLI downloads are being prepared",
+              "text": "This site does not currently distribute the Hatter CLI. Supported operating systems, versions, download locations and hash/signature verification will be listed when available.",
+              "links": []
             }
           ]
         }

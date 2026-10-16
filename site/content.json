@@ -362,12 +362,22 @@
             {
               "title": "手元に置く作業環境",
               "text": "CLIで作業を始め、役割に応じたHATを選ぶ構成です。取得とインストールのあとも、操作の権限は別に確認します。",
-              "links": []
+              "links": [
+                {
+                  "title": "Hatterの製品サイト",
+                  "href": "https://hatter.ihat.online/"
+                }
+              ]
             },
             {
               "title": "ダウンロード",
               "text": "一般向けCLIの配布を準備しています。利用可能な版と対応環境を、配布開始時に案内します。",
-              "links": []
+              "links": [
+                {
+                  "title": "Hatterの配布状況",
+                  "href": "https://hatter.ihat.online/download"
+                }
+              ]
             }
           ],
           "kind": "page",
@@ -381,9 +391,19 @@
           "summary": "公開された役割と配布版を確認するための入口。",
           "sections": [
             {
-              "title": "配布版を確認する",
-              "text": "Registryは指定されたリポジトリの公開リリースを案内する構成です。取得した内容はローカルのHatterで検証します。",
+              "title": "Registryの公開準備中",
+              "text": "指定されたリポジトリの正式リリースを一覧化するためのサービスです。署名された配布情報と取得経路の受入後に、正式な一覧を案内します。",
               "links": []
+            },
+            {
+              "title": "公開仕様と実装を読む",
+              "text": "公開ソースと配布物の有無は別の情報です。まずは公開実装の仕様とREADMEを参照できます。",
+              "links": [
+                {
+                  "title": "公開実装・仕様",
+                  "href": "/hat/registry"
+                }
+              ]
             }
           ],
           "kind": "page",
@@ -904,12 +924,22 @@
             {
               "title": "Your local workspace",
               "text": "Start from a local CLI and select HATs by role. Acquisition and installation do not grant permission to execute.",
-              "links": []
+              "links": [
+                {
+                  "title": "Hatter product site",
+                  "href": "https://hatter.ihat.online/en/"
+                }
+              ]
             },
             {
               "title": "Download",
               "text": "Public CLI downloads are being prepared. Available versions and supported platforms will be listed when released.",
-              "links": []
+              "links": [
+                {
+                  "title": "Hatter distribution status",
+                  "href": "https://hatter.ihat.online/en/download"
+                }
+              ]
             }
           ],
           "kind": "page",
@@ -923,9 +953,19 @@
           "summary": "Explore published roles and released distributions.",
           "sections": [
             {
-              "title": "Inspect a release",
-              "text": "The Registry is designed to index public releases from designated repositories. Hatter verifies acquired content locally.",
+              "title": "Registry publication is being prepared",
+              "text": "The service is intended to list formal releases from designated repositories. The public listing will be linked after signed distribution information and retrieval paths have been accepted.",
               "links": []
+            },
+            {
+              "title": "Read public specifications and implementations",
+              "text": "Source availability and released distributions are different. Public implementation specifications and READMEs are available for review.",
+              "links": [
+                {
+                  "title": "Public implementations and specifications",
+                  "href": "/hat/registry"
+                }
+              ]
             }
           ],
           "kind": "page",
