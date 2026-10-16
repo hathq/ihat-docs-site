@@ -21,6 +21,9 @@ if site['buildKind'] == 'organization':
     subprocess.run(['pnpm', 'site', 'build', site['id']], cwd=app, check=True)
 else:
     if install != app:
+        # Shared workspace tool types resolve through the install-root tsconfig.
+        # Prepare that metadata without building or publishing the parent site.
+        subprocess.run(['pnpm', 'exec', 'nuxt', 'prepare'], cwd=install, check=True)
         relative = app.relative_to(install).as_posix()
         subprocess.run(['pnpm', 'exec', 'nuxt', 'typecheck', relative], cwd=install, check=True)
         subprocess.run(['pnpm', 'exec', 'nuxt', 'generate', relative], cwd=install, check=True)
