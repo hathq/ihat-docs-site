@@ -150,13 +150,19 @@ class SiteReleaseTests(unittest.TestCase):
 
     def test_asset_readback_accepts_only_prepared_bytes_after_bounded_stale_reads(self):
         expected={'404.html':hashlib.sha256(b'approved fallback').hexdigest()}
-        responses=[CompletedProcess([],0,b'stale page'),CompletedProcess([],0,b'approved fallback')]
+        responses=[CompletedProcess([],0,b'stale page')]*6+[CompletedProcess([],0,b'approved fallback')]
         with patch('site_release.subprocess.run',side_effect=responses) as run,patch('site_release.time.sleep'):
             verify_assets('https://example.org',expected)
-            self.assertEqual(run.call_count,2)
+            self.assertEqual(run.call_count,7)
         with patch('site_release.subprocess.run',return_value=CompletedProcess([],0,b'wrong bytes')) as run,patch('site_release.time.sleep'):
             with self.assertRaises(ValueError):verify_assets('https://example.org',expected)
-            self.assertEqual(run.call_count,5)
+            self.assertEqual(run.call_count,20)
+
+    def test_readback_deadline_never_accepts_an_unobserved_asset(self):
+        expected={'index.html':hashlib.sha256(b'approved').hexdigest()}
+        with patch('site_release.time.monotonic',side_effect=[0,121]),patch('site_release.subprocess.run') as run:
+            with self.assertRaises(ValueError):verify_assets('https://example.org',expected)
+            run.assert_not_called()
 
 
 if __name__ == '__main__':
