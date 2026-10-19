@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@nuxtjp/dependency-security": "0.1.0",
-    "@types/node": "24.12.0",
+    "@types/node": "24.19.2",
     "typescript": "5.9.3",
     "vue-tsc": "3.3.13",
     "wrangler": "4.151.0"
