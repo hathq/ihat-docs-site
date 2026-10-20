@@ -372,6 +372,16 @@
               "title": "公開CLIの配布準備中",
               "text": "現在、このサイトではHatter CLIを配布していません。公開時に対応OS、版、取得先とhash・署名の検証方法を掲載します。",
               "links": []
+            },
+            {
+              "title": "HAT拡張を探す",
+              "text": "設計や情報整理などに使うHAT拡張の配布版は、iHATから各開発元へ進んで確認できます。CLI本体と拡張は別々の配布物です。",
+              "links": [
+                {
+                  "title": "公開HATの配布版を見る",
+                  "href": "https://ihat.online/registry"
+                }
+              ]
             }
           ]
         }
@@ -751,6 +761,16 @@
               "title": "Public CLI downloads are being prepared",
               "text": "This site does not currently distribute the Hatter CLI. Supported operating systems, versions, download locations and hash/signature verification will be listed when available.",
               "links": []
+            },
+            {
+              "title": "Explore HAT extensions",
+              "text": "Find released HAT extensions for architecture, source curation and other tasks through iHAT. The CLI and its extensions are separate distributions.",
+              "links": [
+                {
+                  "title": "Browse public HAT releases",
+                  "href": "https://ihat.online/registry"
+                }
+              ]
             }
           ]
         }

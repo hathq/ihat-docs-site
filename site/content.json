@@ -396,6 +396,44 @@
               "links": []
             },
             {
+              "title": "公開HATの配布版",
+              "text": "各開発元の0.10.1配布物、ライセンス、検証情報を確認できます。Hatter CLI本体の配布とは別です。",
+              "links": [
+                {
+                  "title": "環境の構成・状態を確認する (0.10.1)",
+                  "href": "https://github.com/hathq/hat-ecosystem-control-inspector/releases/tag/hat/v0.10.1"
+                },
+                {
+                  "title": "日本の行政区域を参照する (0.10.1)",
+                  "href": "https://github.com/hathq/hat-japan-administrative-areas/releases/tag/hat/v0.10.1"
+                },
+                {
+                  "title": "日本の行政情報を参照する (0.10.1)",
+                  "href": "https://github.com/hathq/hat-japan-government-information/releases/tag/hat/v0.10.1"
+                },
+                {
+                  "title": "ローカル推論を管理する (0.10.1)",
+                  "href": "https://github.com/hathq/hat-local-inference-manager/releases/tag/hat/v0.10.1"
+                },
+                {
+                  "title": "ソフトウェアの設計を支援する (0.10.1)",
+                  "href": "https://github.com/hathq/hat-software-architect/releases/tag/hat/v0.10.1"
+                },
+                {
+                  "title": "情報源を整理する (0.10.1)",
+                  "href": "https://github.com/hathq/hat-source-curator/releases/tag/hat/v0.10.1"
+                },
+                {
+                  "title": "Webサイトの運用を支援する (0.10.1)",
+                  "href": "https://github.com/hathq/hat-website-operator/releases/tag/hat/v0.10.1"
+                },
+                {
+                  "title": "NERPとの連携を支援する (0.10.1)",
+                  "href": "https://github.com/neo-erp/hat-nerp-operator/releases/tag/hat/v0.10.1"
+                }
+              ]
+            },
+            {
               "title": "公開仕様と実装を読む",
               "text": "公開ソースと配布物の有無は別の情報です。まずは公開実装の仕様とREADMEを参照できます。",
               "links": [
@@ -956,6 +994,44 @@
               "title": "Registry publication is being prepared",
               "text": "The service is intended to list formal releases from designated repositories. The public listing will be linked after signed distribution information and retrieval paths have been accepted.",
               "links": []
+            },
+            {
+              "title": "Public HAT releases",
+              "text": "Review version 0.10.1 artifacts, licenses and verification information from each maintainer. These are HAT extensions, separate from the Hatter CLI.",
+              "links": [
+                {
+                  "title": "Inspect environment configuration and state (0.10.1)",
+                  "href": "https://github.com/hathq/hat-ecosystem-control-inspector/releases/tag/hat/v0.10.1"
+                },
+                {
+                  "title": "Reference Japanese administrative areas (0.10.1)",
+                  "href": "https://github.com/hathq/hat-japan-administrative-areas/releases/tag/hat/v0.10.1"
+                },
+                {
+                  "title": "Reference Japanese government information (0.10.1)",
+                  "href": "https://github.com/hathq/hat-japan-government-information/releases/tag/hat/v0.10.1"
+                },
+                {
+                  "title": "Manage local inference (0.10.1)",
+                  "href": "https://github.com/hathq/hat-local-inference-manager/releases/tag/hat/v0.10.1"
+                },
+                {
+                  "title": "Support software architecture (0.10.1)",
+                  "href": "https://github.com/hathq/hat-software-architect/releases/tag/hat/v0.10.1"
+                },
+                {
+                  "title": "Curate sources (0.10.1)",
+                  "href": "https://github.com/hathq/hat-source-curator/releases/tag/hat/v0.10.1"
+                },
+                {
+                  "title": "Support website operations (0.10.1)",
+                  "href": "https://github.com/hathq/hat-website-operator/releases/tag/hat/v0.10.1"
+                },
+                {
+                  "title": "Support NERP integration (0.10.1)",
+                  "href": "https://github.com/neo-erp/hat-nerp-operator/releases/tag/hat/v0.10.1"
+                }
+              ]
             },
             {
               "title": "Read public specifications and implementations",
