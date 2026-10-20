@@ -101,8 +101,8 @@ class SiteReleaseTests(unittest.TestCase):
                 return {'success':True,'result':{'name':'example.org','account':{'id':'a'*32},'status':'active'}}
             if '/dns_records?' in url:
                 return {'success':True,'result':[],'result_info':{'total_pages':1}}
-            if url.endswith('/domains'):
-                return {'success':True,'result':[{'id':'domain','hostname':'example.org','service':'example-site','environment':'production'}]}
+            if url.endswith('/domains?service=example-site'):
+                return {'success':True,'result':[{'id':'domain','zone_id':'c'*32,'hostname':'example.org','service':'example-site','environment':'production'}]}
             if url.endswith('/deployments'):
                 return {'success':True,'result':{'deployments':[{'versions':[{'version_id':'version','percentage':100}]}]}}
             if url.endswith('/subdomain'):
