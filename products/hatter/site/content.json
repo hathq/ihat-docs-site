@@ -363,23 +363,67 @@
           "path": "/download",
           "title": "ダウンロードと導入",
           "label": "ダウンロードと導入",
-          "summary": "使い方と配布情報を確認する。",
+          "summary": "Linux向けHatterをダウンロードして、手元の環境で利用する。",
           "kind": "page",
           "status": "published",
           "category": "",
           "sections": [
             {
-              "title": "公開CLIの配布準備中",
-              "text": "現在、このサイトではHatter CLIを配布していません。公開時に対応OS、版、取得先とhash・署名の検証方法を掲載します。",
-              "links": []
-            },
-            {
-              "title": "HAT拡張を探す",
-              "text": "設計や情報整理などに使うHAT拡張の配布版は、iHATから各開発元へ進んで確認できます。CLI本体と拡張は別々の配布物です。",
+              "title": "Hatter for Linux",
+              "text": "Linux x86_64向けのポータブル版です。Ubuntu 24.04で動作確認しています。Node.js 22または24を別途用意してください。",
               "links": [
                 {
-                  "title": "公開HATの配布版を見る",
-                  "href": "https://ihat.online/registry"
+                  "title": "Linux x86_64をダウンロード",
+                  "href": "https://github.com/hathq/hatter-releases/releases/latest/download/hatter-linux-x86_64.tar.gz",
+                  "summary": "CLIとConsole、必要な構成ファイルをまとめたアーカイブ。"
+                },
+                {
+                  "title": "リリース情報・対応環境",
+                  "href": "https://github.com/hathq/hatter-releases/releases/latest",
+                  "summary": "版と動作確認範囲を確認する。"
+                }
+              ]
+            },
+            {
+              "title": "検証してからセットアップ",
+              "text": "アーカイブ・manifest・SHA256SUMSを同じ版から取得し、hashを確認してから展開してください。セットアップは利用者用のディレクトリで行い、システム設定やサービス登録を変更しません。",
+              "links": [
+                {
+                  "title": "セットアップ手順",
+                  "href": "https://github.com/hathq/hatter-releases/blob/main/INSTALL.md",
+                  "summary": "ダウンロードの照合とポータブル版の起動。"
+                },
+                {
+                  "title": "チェックサム",
+                  "href": "https://github.com/hathq/hatter-releases/releases/latest/download/SHA256SUMS",
+                  "summary": "取得した版のファイル照合。"
+                },
+                {
+                  "title": "配布manifest",
+                  "href": "https://github.com/hathq/hatter-releases/releases/latest/download/release-manifest.json",
+                  "summary": "製品構成とファイルの照合情報。"
+                }
+              ]
+            },
+            {
+              "title": "利用条件とサポート",
+              "text": "無償で利用できます。対象として明示したHAT独自部分の再配布には個別の許可が必要です。サポートは別契約です。第三者ライセンスと既に付与された権利は、それぞれの条件が適用されます。",
+              "links": [
+                {
+                  "title": "配布物の利用条件",
+                  "href": "https://github.com/hathq/hatter-releases/blob/main/BINARY-TERMS.md",
+                  "summary": "適用範囲と第三者コンポーネントの権利。"
+                }
+              ]
+            },
+            {
+              "title": "HATを探す",
+              "text": "用途に合うHATと配布元をiHATで確認できます。パッケージの取得と、アカウントや操作の許可は別々に確認してください。",
+              "links": [
+                {
+                  "title": "iHATのHAT一覧",
+                  "href": "https://ihat.online/",
+                  "summary": "公開HATの用途と各配布元を確認する。"
                 }
               ]
             }
@@ -752,23 +796,67 @@
           "path": "/download",
           "title": "Downloads and installation",
           "label": "Downloads and installation",
-          "summary": "Find usage and distribution information.",
+          "summary": "Download Hatter for Linux and use it on your own computer.",
           "kind": "page",
           "status": "published",
           "category": "",
           "sections": [
             {
-              "title": "Public CLI downloads are being prepared",
-              "text": "This site does not currently distribute the Hatter CLI. Supported operating systems, versions, download locations and hash/signature verification will be listed when available.",
-              "links": []
-            },
-            {
-              "title": "Explore HAT extensions",
-              "text": "Find released HAT extensions for architecture, source curation and other tasks through iHAT. The CLI and its extensions are separate distributions.",
+              "title": "Hatter for Linux",
+              "text": "A portable distribution for Linux x86_64, tested on Ubuntu 24.04. Install Node.js 22 or 24 separately.",
               "links": [
                 {
-                  "title": "Browse public HAT releases",
-                  "href": "https://ihat.online/registry"
+                  "title": "Download Linux x86_64",
+                  "href": "https://github.com/hathq/hatter-releases/releases/latest/download/hatter-linux-x86_64.tar.gz",
+                  "summary": "CLI, Console and required product files in one archive."
+                },
+                {
+                  "title": "Release notes and requirements",
+                  "href": "https://github.com/hathq/hatter-releases/releases/latest",
+                  "summary": "Review the version and tested scope."
+                }
+              ]
+            },
+            {
+              "title": "Verify before setup",
+              "text": "Obtain the archive, manifest and SHA256SUMS from the same version. Verify their hashes before extraction. Portable setup uses your own directory without changing system settings or registering services.",
+              "links": [
+                {
+                  "title": "Setup guide",
+                  "href": "https://github.com/hathq/hatter-releases/blob/main/INSTALL.md",
+                  "summary": "Verify the download and start the portable product."
+                },
+                {
+                  "title": "Checksums",
+                  "href": "https://github.com/hathq/hatter-releases/releases/latest/download/SHA256SUMS",
+                  "summary": "Verify the files from your selected release."
+                },
+                {
+                  "title": "Release manifest",
+                  "href": "https://github.com/hathq/hatter-releases/releases/latest/download/release-manifest.json",
+                  "summary": "Product components and integrity metadata."
+                }
+              ]
+            },
+            {
+              "title": "Usage and support",
+              "text": "Use is free. Redistribution of expressly identified HAT-owned portions requires separate permission. Support is separately contracted. Third-party licenses and previously granted rights retain their own conditions.",
+              "links": [
+                {
+                  "title": "Binary use terms",
+                  "href": "https://github.com/hathq/hatter-releases/blob/main/BINARY-TERMS.md",
+                  "summary": "Scope and third-party component rights."
+                }
+              ]
+            },
+            {
+              "title": "Find a HAT",
+              "text": "Explore public HATs and their publishers on iHAT. Package acquisition and permission to access accounts or perform actions are separate decisions.",
+              "links": [
+                {
+                  "title": "Browse public HATs on iHAT",
+                  "href": "https://ihat.online/",
+                  "summary": "Find supported uses and original distribution sources."
                 }
               ]
             }
