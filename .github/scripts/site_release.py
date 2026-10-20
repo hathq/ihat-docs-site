@@ -16,6 +16,8 @@ import time
 import urllib.request
 import urllib.error
 import urllib.parse
+from site_transport import request
+from site_bindings import observe_domains
 
 
 def read(path):
@@ -59,20 +61,6 @@ def select(root, contract, tag):
     if read(owned(root, site['siteConfig']))['origin'] != site['origin']:
         raise ValueError('Site configuration origin differs from release target')
     return site
-
-
-def request(url, token=None):
-    headers = {'User-Agent': 'owner-site-release', 'Accept': 'application/json'}
-    if token:
-        headers['Authorization'] = 'Bearer ' + token
-    req = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(req, timeout=30) as response:
-        if response.url != url:
-            raise ValueError('API redirect refused')
-        data = response.read(10 * 1024 * 1024 + 1)
-        if len(data) > 10 * 1024 * 1024:
-            raise ValueError('Oversized metadata')
-        return json.loads(data)
 
 
 def admit(root, contract, environment):
@@ -207,10 +195,7 @@ def deploy(root, contract, site, output, expected):
         raise ValueError('DNS observation incomplete')
     original_dns = dns_digest()
     def domains():
-        data = request(prefix + '/domains', token)
-        if data.get('success') is not True or not isinstance(data.get('result'), list) or data.get('result_info', {}).get('total_pages', 1) > 1 or data.get('result_info', {}).get('total_count', 0) > len(data['result']):
-            raise ValueError('Incomplete Worker domain observation')
-        return sorted([{k: d.get(k) for k in ['id','hostname','service','environment']} for d in data['result']], key=lambda d:d['hostname'])
+        return observe_domains(request, prefix, token, site)
     before = domains()
     if not any(d['hostname'] == site['domain'] and d['service'] == site['worker'] and d['environment'] == 'production' for d in before):
         raise ValueError('Existing production binding missing; refuse creating a new deployment target')
@@ -249,6 +234,7 @@ def deploy(root, contract, site, output, expected):
         raise ValueError('Unexpected workers.dev or preview exposure')
     (output / 'acceptance.json').write_text(json.dumps({'site':site['id'],'source':receipt['source'],'version':site['version'],
         'origin':site['origin'],'matched_assets':len(receipt['files']),'archive_sha256':expected,'custom_domains_unchanged':True,
+        'binding_scope':{'worker':site['worker'],'zone':site['zone']},
         'dns_unchanged':True,'workers_dev_enabled':False,'preview_urls_enabled':False,'verify_only':already}) + '\n')
     (output / 'operation.json').write_text('{"state":"complete"}\n')
 
