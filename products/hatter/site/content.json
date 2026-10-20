@@ -61,7 +61,7 @@
           "sections": [
             {
               "title": "1. 配布と対応環境を確認する",
-              "text": "公開CLIは準備中です。取得可能な版と対応環境が掲載されていることを確認してから導入してください。",
+              "text": "Linux x86_64向けの公開版をダウンロードできます。対応するNode.jsと配布物のチェックサムを確認し、導入手順に沿って起動してください。",
               "links": [
                 {
                   "title": "配布状況",
@@ -494,7 +494,7 @@
           "sections": [
             {
               "title": "1. Check availability and supported environments",
-              "text": "Public CLI distribution is being prepared. Begin installation only once an available version and supported environment are listed.",
+              "text": "A public release is available for Linux x86_64. Check the supported Node.js version and archive checksums, then follow the installation guide to start the product.",
               "links": [
                 {
                   "title": "Distribution status",
