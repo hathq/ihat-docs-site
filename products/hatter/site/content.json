@@ -422,7 +422,7 @@
               "links": [
                 {
                   "title": "iHATのHAT一覧",
-                  "href": "https://ihat.online/",
+                  "href": "https://ihat.online/registry",
                   "summary": "公開HATの用途と各配布元を確認する。"
                 }
               ]
@@ -855,7 +855,7 @@
               "links": [
                 {
                   "title": "Browse public HATs on iHAT",
-                  "href": "https://ihat.online/",
+                  "href": "https://ihat.online/en/registry",
                   "summary": "Find supported uses and original distribution sources."
                 }
               ]
