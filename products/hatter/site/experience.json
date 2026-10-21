@@ -1,0 +1,100 @@
+{
+  "ja": {
+    "category": "ローカルAIワークスペース",
+    "primary": {
+      "href": "/download",
+      "title": "Hatterをダウンロード"
+    },
+    "secondary": {
+      "href": "/use-cases",
+      "title": "使い方を見る"
+    },
+    "pathsTitle": "何をお探しですか？",
+    "paths": [
+      {
+        "href": "/download",
+        "title": "使い始めたい",
+        "summary": "対応環境・利用条件・導入手順"
+      },
+      {
+        "href": "/features",
+        "title": "できることを知りたい",
+        "summary": "役割と手元の作業環境を知る"
+      },
+      {
+        "href": "https://ihat.online/registry",
+        "title": "HATを探したい",
+        "summary": "用途に合う拡張と配布元を確認"
+      }
+    ],
+    "preview": {
+      "kind": "workspace",
+      "label": "使い方のイメージ",
+      "title": "作業に合う役割を、手元に。",
+      "rows": [
+        {
+          "label": "役割を選ぶ",
+          "detail": "何を手伝ってほしいかを決める"
+        },
+        {
+          "label": "作業対象を確かめる",
+          "detail": "対象と必要な権限を確認する"
+        },
+        {
+          "label": "手元で作業を進める",
+          "detail": "結果を確かめながら次へ進む"
+        }
+      ],
+      "outcome": "役割から、日々の作業へ。"
+    }
+  },
+  "en": {
+    "category": "Local AI workspace",
+    "primary": {
+      "href": "/download",
+      "title": "Download Hatter"
+    },
+    "secondary": {
+      "href": "/use-cases",
+      "title": "Explore workflows"
+    },
+    "pathsTitle": "What brings you here?",
+    "paths": [
+      {
+        "href": "/download",
+        "title": "Get Hatter",
+        "summary": "Requirements, terms and setup"
+      },
+      {
+        "href": "/features",
+        "title": "Explore the product",
+        "summary": "Roles and your local workspace"
+      },
+      {
+        "href": "https://ihat.online/registry",
+        "title": "Find a HAT",
+        "summary": "Find extensions and their releases"
+      }
+    ],
+    "preview": {
+      "kind": "workspace",
+      "label": "Workflow illustration",
+      "title": "Your workflow. Your chosen role.",
+      "rows": [
+        {
+          "label": "Choose a role",
+          "detail": "Start with the task you have in mind"
+        },
+        {
+          "label": "Review the scope",
+          "detail": "Review the target and required permissions"
+        },
+        {
+          "label": "Work locally",
+          "detail": "Review the result before the next step"
+        }
+      ],
+      "outcome": "From a role to everyday work."
+    }
+  }
+}

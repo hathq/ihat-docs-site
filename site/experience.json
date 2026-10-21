@@ -1,0 +1,100 @@
+{
+  "ja": {
+    "category": "HATディレクトリ",
+    "primary": {
+      "href": "/registry",
+      "title": "HATを探す"
+    },
+    "secondary": {
+      "href": "/products/hatter",
+      "title": "Hatterを知る"
+    },
+    "pathsTitle": "何をお探しですか？",
+    "paths": [
+      {
+        "href": "/registry",
+        "title": "目的に合うHATを探す",
+        "summary": "公開された役割と配布版を比較"
+      },
+      {
+        "href": "/products/hatter",
+        "title": "手元で使う方法を知る",
+        "summary": "Hatterと導入の流れを確認"
+      },
+      {
+        "href": "/hat/specification",
+        "title": "HATの仕組みを知る",
+        "summary": "役割・条件・仕様を読む"
+      }
+    ],
+    "preview": {
+      "kind": "directory",
+      "label": "用途から選ぶ",
+      "title": "いま必要な役割から、選ぶ。",
+      "rows": [
+        {
+          "label": "設計・開発",
+          "detail": "ソフトウェアの設計を支援"
+        },
+        {
+          "label": "調査・情報整理",
+          "detail": "出典と資料を整理"
+        },
+        {
+          "label": "環境・業務",
+          "detail": "構成や業務の役割を探す"
+        }
+      ],
+      "outcome": "用途 → 役割 → 配布版"
+    }
+  },
+  "en": {
+    "category": "HAT directory",
+    "primary": {
+      "href": "/registry",
+      "title": "Explore HATs"
+    },
+    "secondary": {
+      "href": "/products/hatter",
+      "title": "Meet Hatter"
+    },
+    "pathsTitle": "What brings you here?",
+    "paths": [
+      {
+        "href": "/registry",
+        "title": "Find the right HAT",
+        "summary": "Browse published roles and releases"
+      },
+      {
+        "href": "/products/hatter",
+        "title": "Use HATs locally",
+        "summary": "Meet Hatter and the setup journey"
+      },
+      {
+        "href": "/hat/specification",
+        "title": "Understand HATs",
+        "summary": "Explore roles, conditions and specifications"
+      }
+    ],
+    "preview": {
+      "kind": "directory",
+      "label": "Browse by purpose",
+      "title": "Start with the role you need.",
+      "rows": [
+        {
+          "label": "Design & development",
+          "detail": "Support software architecture"
+        },
+        {
+          "label": "Research & knowledge",
+          "detail": "Curate sources and information"
+        },
+        {
+          "label": "Environments & work",
+          "detail": "Explore environment and business roles"
+        }
+      ],
+      "outcome": "Purpose → Role → Release"
+    }
+  }
+}

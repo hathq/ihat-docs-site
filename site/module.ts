@@ -16,6 +16,7 @@ const sitePages: NuxtModule = (_options, nuxt) => {
   })))
   const file = fileURLToPath(new URL('./SitePage.vue', import.meta.url))
   nuxt.options.css.push(fileURLToPath(new URL('./site.css', import.meta.url)))
+  nuxt.options.css.push(fileURLToPath(new URL('./experience.css', import.meta.url)))
   nuxt.hook('pages:extend', pages => {
     pages.splice(0, pages.length, ...paths.map(({ path, locale, source }) => ({ name: `site-${locale}-${source.replace(/\W/g, '-')}`, path, file, meta: { layout: false } })))
   })
