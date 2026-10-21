@@ -41,7 +41,8 @@
     "overrides": {
       "simple-git": "4.0.2",
       "@simple-git/argv-parser": "2.0.1",
-      "esbuild": "0.28.2"
+      "esbuild": "0.28.2",
+      "launch-editor": "2.14.2"
     }
   }
 }
