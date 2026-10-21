@@ -1,0 +1,11 @@
+{
+  "version": "0.10.0",
+  "platform": "Linux / WSL · x86_64 (GNU)",
+  "nodeMajors": [
+    22,
+    24
+  ],
+  "installerSource": "ecee903e96e57f67cccb59ec6205c22ef752cd17",
+  "installerSha256": "1444fb1d8c89d51ceeb5af76cf761c302d85cab90f8c750bb8b12591cfd41e18",
+  "archiveSha256": "9a2a4ba6f87d90dff39521d1bf8ba79880cb02efa1036752d896689a09b0a2c2"
+}

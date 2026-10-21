@@ -4,6 +4,7 @@ import { useRoute, useSeoMeta, useHead, createError } from '#imports'
 import data from './content.json'
 import experiences from './experience.json'
 import type { Experience } from './experience-types'
+import InstallCommand from './components/InstallCommand.vue'
 import ServicePreview from './components/ServicePreview.vue'
 import VisitorPaths from './components/VisitorPaths.vue'
 import PageNextSteps from './components/PageNextSteps.vue'
@@ -39,7 +40,7 @@ useHead(() => ({ htmlAttrs: { lang: locale.value }, link: [
     <SiteHeader :content="content" :path="path" :local="local" :alternate="alternate" :primary="experience.primary" />
     <main id="content">
       <div v-if="path !== '/'" class="site-breadcrumb"><NuxtLink :to="local('/')">{{ locale === 'ja' ? 'ホーム' : 'Home' }}</NuxtLink><span aria-hidden="true">/</span><template v-if="parent"><NuxtLink :to="local(parent.path)">{{ parent.label || parent.title }}</NuxtLink><span aria-hidden="true">/</span></template><span aria-current="page">{{ page.label || page.title }}</span></div>
-      <section class="site-hero" :class="{ 'site-hero-home': page.kind === 'home' }">
+      <section class="site-hero" :class="{ 'site-hero-home': page.kind === 'home', 'site-hero-install': path === '/download' }">
         <div><p v-if="page.kind === 'home'" class="site-eyebrow">{{ experience.category }}</p><h1>{{ page.title }}</h1><p class="site-lead">{{ page.summary }}</p>
           <div v-if="page.kind === 'home'" class="site-actions"><NuxtLink :to="local(experience.primary.href)" class="site-button">{{ experience.primary.title }} <span aria-hidden="true">↗</span></NuxtLink><NuxtLink :to="local(experience.secondary.href)">{{ experience.secondary.title }} →</NuxtLink></div>
         </div>
@@ -48,16 +49,23 @@ useHead(() => ({ htmlAttrs: { lang: locale.value }, link: [
       <div class="site-body">
         <VisitorPaths v-if="page.kind === 'home'" :experience="experience" :local="local" />
         <ResourceLibrary v-if="page.kind === 'catalog'" :resources="content.resources" :locale="locale" :local="local" />
-        <PageSections :sections="page.sections" :local="local" />
+        <InstallCommand v-if="path === '/download'" :locale="locale" :icon="content.icon" :local="local" />
+        <PageSections v-else :sections="page.sections" :local="local" />
         <DownloadOverview v-if="page.kind === 'catalog' || (data.siteId === 'coela' && page.kind === 'home')" :locale="locale" />
         <section v-if="page.kind === 'journal'" class="site-journal">
           <NuxtLink v-for="article in articles" :key="article.path" :to="local(article.path)" class="site-story"><span>{{ article.category }}</span><h2>{{ article.title }}</h2><p>{{ article.summary }}</p></NuxtLink>
           <p v-if="!articles.length" class="site-empty">{{ locale === 'ja' ? '新しい記事をお届けします。テーマごとのガイドもご覧ください。' : 'New stories are on the way. Explore the topic guides in the meantime.' }}</p>
         </section>
         <section v-if="path === '/sitemap'" class="site-map"><ul><li v-for="entry in content.pages.filter(item => item.status !== 'draft' && item.path !== path)" :key="entry.path"><NuxtLink :to="local(entry.path)">{{ entry.label || entry.title.replace(/\n/g, ' ') }}</NuxtLink></li></ul></section>
-        <PageNextSteps v-if="page.kind !== 'home' && !['/privacy', '/security', '/sitemap'].includes(path)" :experience="experience" :page="page" :locale="locale" :local="local" />
+        <PageNextSteps v-if="page.kind !== 'home' && !['/download', '/privacy', '/security', '/sitemap'].includes(path)" :experience="experience" :page="page" :locale="locale" :local="local" />
       </div>
     </main>
     <footer class="site-footer"><div><strong>{{ content.brand }}</strong><p>{{ content.caption }}</p></div><nav :aria-label="locale === 'ja' ? 'フッター' : 'Footer'"><NuxtLink v-for="item in content.navigation" :key="item.href" :to="local(item.href)">{{ item.title }}</NuxtLink><NuxtLink v-if="content.pages.some(item => item.path === '/contact')" :to="local('/contact')">{{ locale === 'ja' ? 'お問い合わせ' : 'Contact' }}</NuxtLink><NuxtLink :to="local('/privacy')">{{ locale === 'ja' ? 'プライバシー' : 'Privacy' }}</NuxtLink><NuxtLink :to="local('/security')">{{ locale === 'ja' ? 'セキュリティ' : 'Security' }}</NuxtLink><NuxtLink :to="local('/sitemap')">{{ locale === 'ja' ? 'サイトマップ' : 'Sitemap' }}</NuxtLink></nav></footer>
   </div>
 </template>
+
+<style scoped>
+.site-hero.site-hero-install { padding-block: 24px 20px; text-align: center; }
+.site-hero-install h1 { margin-inline: auto; font-size: clamp(30px, 4vw, 42px); }
+.site-hero-install .site-lead { margin-inline: auto; }
+</style>

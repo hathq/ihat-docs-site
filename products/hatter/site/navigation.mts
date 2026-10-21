@@ -19,7 +19,7 @@ export function validateNavigation(content: Content) {
     pending.push(...links(path).map(link => link.href))
   }
   for (const path of requiredPaths) assert.ok(reached.has(path), `unreachable without sitemap: ${path}`)
-  assert.ok(links('/download').every(link => !link.href.startsWith('/')), 'purpose: download must end at distribution resources rather than repeat the overview')
-  assert.ok(links('/download').some(link => link.href === 'https://github.com/hathq/hatter-releases/releases/latest/download/hatter-linux-x86_64.tar.gz'), 'purpose: download must lead to the actual product archive, not a verifier SDK')
+  assert.ok(!links('/download').some(link => ['/features', '/docs', '/'].includes(link.href)), 'purpose: installation must not return to an overview')
+  assert.ok(links('/download').some(link => link.href === '/docs/getting-started') && links('/download').some(link => /^https:\/\/github.com\/hathq\/hatter-releases\/releases\/tag\/v/.test(link.href)), 'purpose: installation provides setup help and exact release details')
   assert.ok(links('/docs/getting-started').some(link => link.href === '/download') && !links('/docs/getting-started').some(link => link.href === '/features'), 'purpose: setup needs distribution status rather than feature repetition')
 }
