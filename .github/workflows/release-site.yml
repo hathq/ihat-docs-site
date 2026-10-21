@@ -8,7 +8,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: site-release-${{ github.repository }}
+  group: site-release-${{ github.repository }}-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   contract:
@@ -82,6 +82,9 @@ jobs:
           fi
   deploy:
     needs: prepare
+    concurrency:
+      group: site-deploy-${{ github.repository }}-${{ needs.prepare.outputs.environment }}
+      cancel-in-progress: false
     if: vars.SITE_DEPLOY_ENABLED == 'true' && needs.prepare.outputs.deploy-enabled == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 20
