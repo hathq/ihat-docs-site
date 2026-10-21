@@ -17,7 +17,7 @@
     "test": "node --test && pnpm run test:site-structure && node products/hatter/site/check.mjs && node --test products/hatter/site/experience.cases.mts && node --test site/experience.cases.mts",
     "validate:content": "nuxtjp-localized-site validate --content-root .",
     "test:site-structure": "node --test site/navigation.cases.mts && node site/check.mjs",
-    "product:hatter:check": "node --test products/hatter/site/navigation.cases.mts && node products/hatter/site/check.mjs && nuxt typecheck products/hatter",
+    "product:hatter:check": "node --test products/hatter/site/navigation.cases.mts products/hatter/site/installer.cases.mts && node products/hatter/site/check.mjs && nuxt typecheck products/hatter",
     "product:hatter:build": "nuxt generate products/hatter"
   },
   "dependencies": {

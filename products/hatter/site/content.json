@@ -56,32 +56,37 @@
         },
         {
           "path": "/docs/getting-started",
-          "title": "導入前の確認",
-          "summary": "CLIの公開状況、HATの役割、ローカルでの検証について確認します。",
+          "title": "Hatterの導入ガイド",
+          "summary": "対応環境の確認からインストール、最初の起動まで。",
           "sections": [
             {
-              "title": "1. 配布と対応環境を確認する",
-              "text": "Linux x86_64向けの公開版をダウンロードできます。対応するNode.jsと配布物のチェックサムを確認し、導入手順に沿って起動してください。",
+              "title": "1. 環境を確認する",
+              "text": "LinuxまたはWSLのx86_64環境と、信頼できるNode 22または24が必要です。Ubuntu 24.04で検証しています。Nodeの自動インストールやWindowsネイティブへの導入は行いません。",
+              "links": []
+            },
+            {
+              "title": "2. コマンドを実行する",
+              "text": "インストールページでコマンドをコピーし、端末に貼り付けて実行します。表示されたバージョンと配置先を確認して「install」と入力してください。取得したインストーラーと製品アーカイブは実行・展開前に検証します。",
               "links": [
                 {
-                  "title": "配布状況",
+                  "title": "インストールコマンドへ",
                   "href": "/download"
                 }
               ]
             },
             {
-              "title": "2. 必要な役割を確認する",
-              "text": "目的に合うHATの役割、対象、必要な権限を確認します。取得することと実行を許可することは分けて扱います。",
+              "title": "3. Hatterを起動する",
+              "text": "インストール完了後、端末で ~/.local/bin/hatter を実行し、表示されるローカルURLをブラウザで開きます。既存のPATHに ~/.local/bin があれば hatter でも起動できます。シェル設定の自動変更や常駐サービスの登録は行いません。",
               "links": []
             },
             {
-              "title": "3. ローカルで検証する",
-              "text": "公開版の導入手順に従い、取得物の検証を終えてからローカルの作業対象と権限を設定します。",
+              "title": "4. 作業対象と権限を選ぶ",
+              "text": "インストールだけではデータストア、保存キー、役割、実行権限は初期化されません。必要な準備を個別に確認し、HATの取得と実行の許可を分けて進めます。Registryとの実同期は準備中です。",
               "links": []
             }
           ],
           "kind": "page",
-          "label": "導入前の確認",
+          "label": "導入ガイド",
           "category": "",
           "status": "published"
         },
@@ -361,69 +366,24 @@
         },
         {
           "path": "/download",
-          "title": "ダウンロードと導入",
-          "label": "ダウンロードと導入",
-          "summary": "Linux向けHatterをダウンロードして、手元の環境で利用する。",
+          "title": "Hatterをはじめる",
+          "label": "インストール",
+          "summary": "コマンドをコピーして、手元の環境へインストール。",
           "kind": "page",
           "status": "published",
           "category": "",
           "sections": [
             {
-              "title": "Hatter for Linux",
-              "text": "Linux x86_64向けのポータブル版です。Ubuntu 24.04で動作確認しています。Node.js 22または24を別途用意してください。",
+              "title": "導入手順",
+              "text": "対応環境を確認し、表示されたコマンドを端末で実行してください。",
               "links": [
                 {
-                  "title": "Linux x86_64をダウンロード",
-                  "href": "https://github.com/hathq/hatter-releases/releases/latest/download/hatter-linux-x86_64.tar.gz",
-                  "summary": "CLIとConsole、必要な構成ファイルをまとめたアーカイブ。"
+                  "title": "導入ガイド",
+                  "href": "/docs/getting-started"
                 },
                 {
-                  "title": "リリース情報・対応環境",
-                  "href": "https://github.com/hathq/hatter-releases/releases/latest",
-                  "summary": "版と動作確認範囲を確認する。"
-                }
-              ]
-            },
-            {
-              "title": "検証してからセットアップ",
-              "text": "アーカイブ・manifest・SHA256SUMSを同じ版から取得し、hashを確認してから展開してください。セットアップは利用者用のディレクトリで行い、システム設定やサービス登録を変更しません。",
-              "links": [
-                {
-                  "title": "セットアップ手順",
-                  "href": "https://github.com/hathq/hatter-releases/blob/main/INSTALL.md",
-                  "summary": "ダウンロードの照合とポータブル版の起動。"
-                },
-                {
-                  "title": "チェックサム",
-                  "href": "https://github.com/hathq/hatter-releases/releases/latest/download/SHA256SUMS",
-                  "summary": "取得した版のファイル照合。"
-                },
-                {
-                  "title": "配布manifest",
-                  "href": "https://github.com/hathq/hatter-releases/releases/latest/download/release-manifest.json",
-                  "summary": "製品構成とファイルの照合情報。"
-                }
-              ]
-            },
-            {
-              "title": "利用条件とサポート",
-              "text": "無償で利用できます。対象として明示したHAT独自部分の再配布には個別の許可が必要です。サポートは別契約です。第三者ライセンスと既に付与された権利は、それぞれの条件が適用されます。",
-              "links": [
-                {
-                  "title": "配布物の利用条件",
-                  "href": "https://github.com/hathq/hatter-releases/blob/main/BINARY-TERMS.md",
-                  "summary": "適用範囲と第三者コンポーネントの権利。"
-                }
-              ]
-            },
-            {
-              "title": "HATを探す",
-              "text": "用途に合うHATと配布元をiHATで確認できます。パッケージの取得と、アカウントや操作の許可は別々に確認してください。",
-              "links": [
-                {
-                  "title": "iHATのHAT一覧",
-                  "href": "https://ihat.online/registry",
-                  "summary": "公開HATの用途と各配布元を確認する。"
+                  "title": "リリースノート",
+                  "href": "https://github.com/hathq/hatter-releases/releases/tag/v0.10.0"
                 }
               ]
             }
@@ -489,32 +449,37 @@
         },
         {
           "path": "/docs/getting-started",
-          "title": "Before installation",
-          "summary": "Check CLI availability, HAT roles and local verification before installation.",
+          "title": "Install and start Hatter",
+          "summary": "Check your environment, install Hatter and launch it for the first time.",
           "sections": [
             {
-              "title": "1. Check availability and supported environments",
-              "text": "A public release is available for Linux x86_64. Check the supported Node.js version and archive checksums, then follow the installation guide to start the product.",
+              "title": "1. Check your environment",
+              "text": "Use Linux or WSL on x86_64 with a trusted existing Node 22 or 24. This release is tested on Ubuntu 24.04. Node is not installed automatically, and native Windows is not supported.",
+              "links": []
+            },
+            {
+              "title": "2. Run the installation command",
+              "text": "Copy the command from the installation page into your terminal. Review the version and destinations, then type “install”. The installer and product archive are verified before execution and extraction.",
               "links": [
                 {
-                  "title": "Distribution status",
+                  "title": "Get the installation command",
                   "href": "/download"
                 }
               ]
             },
             {
-              "title": "2. Identify the required role",
-              "text": "Review the HAT role, targets and required permissions for your purpose. Acquiring a module and authorizing its execution are separate steps.",
+              "title": "3. Start Hatter",
+              "text": "Run ~/.local/bin/hatter in your terminal, then open the local URL it displays. If ~/.local/bin is already in your PATH, you can use hatter. Shell settings are not edited and no persistent service is registered.",
               "links": []
             },
             {
-              "title": "3. Verify locally",
-              "text": "Follow the released setup guide and verify the acquired files before configuring local work targets and permissions.",
+              "title": "4. Select work and permissions",
+              "text": "Installation does not initialize storage, credentials, roles or execution permissions. Review the required preparation separately; acquiring a HAT does not authorize its execution. Live Registry synchronization is still being prepared.",
               "links": []
             }
           ],
           "kind": "page",
-          "label": "Before installation",
+          "label": "Setup guide",
           "category": "",
           "status": "published"
         },
@@ -794,69 +759,24 @@
         },
         {
           "path": "/download",
-          "title": "Downloads and installation",
-          "label": "Downloads and installation",
-          "summary": "Download Hatter for Linux and use it on your own computer.",
+          "title": "Get started with Hatter",
+          "label": "Install Hatter",
+          "summary": "Copy one command to install Hatter in your local environment.",
           "kind": "page",
           "status": "published",
           "category": "",
           "sections": [
             {
-              "title": "Hatter for Linux",
-              "text": "A portable distribution for Linux x86_64, tested on Ubuntu 24.04. Install Node.js 22 or 24 separately.",
-              "links": [
-                {
-                  "title": "Download Linux x86_64",
-                  "href": "https://github.com/hathq/hatter-releases/releases/latest/download/hatter-linux-x86_64.tar.gz",
-                  "summary": "CLI, Console and required product files in one archive."
-                },
-                {
-                  "title": "Release notes and requirements",
-                  "href": "https://github.com/hathq/hatter-releases/releases/latest",
-                  "summary": "Review the version and tested scope."
-                }
-              ]
-            },
-            {
-              "title": "Verify before setup",
-              "text": "Obtain the archive, manifest and SHA256SUMS from the same version. Verify their hashes before extraction. Portable setup uses your own directory without changing system settings or registering services.",
+              "title": "Installation guide",
+              "text": "Check the requirements, then run the displayed command in your terminal.",
               "links": [
                 {
                   "title": "Setup guide",
-                  "href": "https://github.com/hathq/hatter-releases/blob/main/INSTALL.md",
-                  "summary": "Verify the download and start the portable product."
+                  "href": "/docs/getting-started"
                 },
                 {
-                  "title": "Checksums",
-                  "href": "https://github.com/hathq/hatter-releases/releases/latest/download/SHA256SUMS",
-                  "summary": "Verify the files from your selected release."
-                },
-                {
-                  "title": "Release manifest",
-                  "href": "https://github.com/hathq/hatter-releases/releases/latest/download/release-manifest.json",
-                  "summary": "Product components and integrity metadata."
-                }
-              ]
-            },
-            {
-              "title": "Usage and support",
-              "text": "Use is free. Redistribution of expressly identified HAT-owned portions requires separate permission. Support is separately contracted. Third-party licenses and previously granted rights retain their own conditions.",
-              "links": [
-                {
-                  "title": "Binary use terms",
-                  "href": "https://github.com/hathq/hatter-releases/blob/main/BINARY-TERMS.md",
-                  "summary": "Scope and third-party component rights."
-                }
-              ]
-            },
-            {
-              "title": "Find a HAT",
-              "text": "Explore public HATs and their publishers on iHAT. Package acquisition and permission to access accounts or perform actions are separate decisions.",
-              "links": [
-                {
-                  "title": "Browse public HATs on iHAT",
-                  "href": "https://ihat.online/en/registry",
-                  "summary": "Find supported uses and original distribution sources."
+                  "title": "Release notes",
+                  "href": "https://github.com/hathq/hatter-releases/releases/tag/v0.10.0"
                 }
               ]
             }

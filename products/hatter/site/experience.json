@@ -3,7 +3,7 @@
     "category": "ローカルAIワークスペース",
     "primary": {
       "href": "/download",
-      "title": "Hatterをダウンロード"
+      "title": "Hatterをインストール"
     },
     "secondary": {
       "href": "/use-cases",
@@ -52,7 +52,7 @@
     "category": "Local AI workspace",
     "primary": {
       "href": "/download",
-      "title": "Download Hatter"
+      "title": "Install Hatter"
     },
     "secondary": {
       "href": "/use-cases",
