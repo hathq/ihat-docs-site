@@ -47,8 +47,8 @@ useHead(() => ({ htmlAttrs: { lang: locale.value }, link: [
       </section>
       <div class="site-body">
         <VisitorPaths v-if="page.kind === 'home'" :experience="experience" :local="local" />
-        <PageSections :sections="page.sections" :local="local" />
         <ResourceLibrary v-if="page.kind === 'catalog'" :resources="content.resources" :locale="locale" :local="local" />
+        <PageSections :sections="page.sections" :local="local" />
         <DownloadOverview v-if="page.kind === 'catalog' || (data.siteId === 'coela' && page.kind === 'home')" :locale="locale" />
         <section v-if="page.kind === 'journal'" class="site-journal">
           <NuxtLink v-for="article in articles" :key="article.path" :to="local(article.path)" class="site-story"><span>{{ article.category }}</span><h2>{{ article.title }}</h2><p>{{ article.summary }}</p></NuxtLink>

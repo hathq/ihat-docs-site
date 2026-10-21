@@ -29,7 +29,7 @@
     ],
     "preview": {
       "kind": "directory",
-      "label": "使い方のイメージ",
+      "label": "用途から選ぶ",
       "title": "いま必要な役割から、選ぶ。",
       "rows": [
         {
@@ -78,7 +78,7 @@
     ],
     "preview": {
       "kind": "directory",
-      "label": "Workflow illustration",
+      "label": "Browse by purpose",
       "title": "Start with the role you need.",
       "rows": [
         {

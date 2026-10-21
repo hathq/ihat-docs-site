@@ -388,7 +388,7 @@
         {
           "path": "/registry",
           "title": "必要なHATを探す",
-          "summary": "公開された役割と配布版を確認するための入口。",
+          "summary": "公開HATを用途から探し、開発元の配布版を確認する。署名Registryとの自動同期は準備中です。",
           "sections": [
             {
               "title": "Registryの公開準備中",
@@ -1003,7 +1003,7 @@
         {
           "path": "/registry",
           "title": "Find a HAT",
-          "summary": "Explore published roles and released distributions.",
+          "summary": "Browse public HATs and maintainer releases. Automatic signed Registry synchronization is being prepared.",
           "sections": [
             {
               "title": "Registry publication is being prepared",
