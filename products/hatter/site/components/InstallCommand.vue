@@ -16,7 +16,7 @@ async function copy() {
     <p class="install-channel">{{ locale === 'ja' ? '安定版' : 'Stable release' }}</p>
     <h2>Hatter <span>v{{ release.version }}</span></h2>
     <p>{{ release.platform }}</p>
-    <p class="install-requirement">{{ locale === 'ja' ? '事前にNode 22または24が必要です。Ubuntu 24.04で検証済み。' : 'Requires an existing Node 22 or 24. Tested on Ubuntu 24.04.' }}</p>
+    <p class="install-requirement">{{ locale === 'ja' ? '事前にNode 22.23.4以降または24.22.1以降が必要です。Ubuntu 24.04で検証済み。' : 'Requires an existing Node 22.23.4+ or 24.22.1+. Tested on Ubuntu 24.04.' }}</p>
     <div class="install-terminal">
       <div class="install-terminal-bar"><span aria-hidden="true">$</span><span>Terminal · Bash</span><button type="button" @click="copy">{{ locale === 'ja' ? 'コマンドをコピー' : 'Copy command' }}</button></div>
       <pre tabindex="0" :aria-label="locale === 'ja' ? 'インストールコマンド' : 'Installation command'"><code>{{ command }}</code></pre>

@@ -61,7 +61,7 @@
           "sections": [
             {
               "title": "1. 環境を確認する",
-              "text": "LinuxまたはWSLのx86_64環境と、信頼できるNode 22または24が必要です。Ubuntu 24.04で検証しています。Nodeの自動インストールやWindowsネイティブへの導入は行いません。",
+              "text": "LinuxまたはWSLのx86_64環境と、信頼できるNode 22.23.4以降または24.22.1以降が必要です。Ubuntu 24.04で検証しています。Nodeの自動インストールやWindowsネイティブへの導入は行いません。",
               "links": []
             },
             {
@@ -454,7 +454,7 @@
           "sections": [
             {
               "title": "1. Check your environment",
-              "text": "Use Linux or WSL on x86_64 with a trusted existing Node 22 or 24. This release is tested on Ubuntu 24.04. Node is not installed automatically, and native Windows is not supported.",
+              "text": "Use Linux or WSL on x86_64 with a trusted existing Node 22.23.4+ or 24.22.1+. This release is tested on Ubuntu 24.04. Node is not installed automatically, and native Windows is not supported.",
               "links": []
             },
             {

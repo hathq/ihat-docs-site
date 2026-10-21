@@ -24,3 +24,10 @@ test('both languages provide installation context rather than archive buttons', 
     assert.ok(!JSON.stringify(page.sections).includes('/releases/latest/download/'))
   }
 })
+
+test('displayed prerequisites and the pinned installer carry the patched Node floor', () => {
+  assert.deepEqual(release.nodeMinimums, {'22':'22.23.4','24':'24.22.1'})
+  const content=readFileSync(new URL('./content.json',import.meta.url),'utf8')
+  const component=readFileSync(new URL('./components/InstallCommand.vue',import.meta.url),'utf8')
+  for(const value of [content,component]){assert.match(value,/22\.23\.4/);assert.match(value,/24\.22\.1/)}
+})
