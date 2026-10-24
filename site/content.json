@@ -589,8 +589,8 @@
         },
         {
           "title": "ソフトウェアの設計を支援する",
-          "href": "https://github.com/hathq/hat-software-architect/releases/tag/hat/v0.10.1",
-          "summary": "ソフトウェア設計を支援する役割。 配布版 0.10.1。",
+          "href": "https://github.com/hathq/hat-software-architect/releases/tag/hat/v0.11.0",
+          "summary": "ソフトウェア設計を支援する役割。 配布版 0.11.0。",
           "category": "設計・開発"
         },
         {
@@ -1204,8 +1204,8 @@
         },
         {
           "title": "Support software architecture",
-          "href": "https://github.com/hathq/hat-software-architect/releases/tag/hat/v0.10.1",
-          "summary": "Support software architecture. Release 0.10.1.",
+          "href": "https://github.com/hathq/hat-software-architect/releases/tag/hat/v0.11.0",
+          "summary": "Support software architecture. Release 0.11.0.",
           "category": "Design & development"
         },
         {

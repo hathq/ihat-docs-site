@@ -37,5 +37,5 @@ if (data.siteId === 'ihat-docs') test('the discoverable HAT directory links the 
   assert.equal(ja.length, 8)
   assert.equal(new Set(ja.map(item => item.href)).size, 8)
   assert.deepEqual(ja.map(item => item.href), en.map(item => item.href))
-  for (const item of ja) assert.match(item.href, /^https:\/\/github\.com\/(hathq|neo-erp)\/hat-[a-z-]+\/releases\/tag\/hat\/v0\.10\.1$/)
+  for (const item of ja) assert.match(item.href, /^https:\/\/github\.com\/(hathq|neo-erp)\/hat-[a-z-]+\/releases\/tag\/hat\/v(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)$/)
 })
