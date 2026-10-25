@@ -1,12 +1,12 @@
 {
   "name": "@hathq/ihat-docs-site",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "license": "Apache-2.0",
   "type": "module",
   "packageManager": "pnpm@10.29.3",
   "engines": {
-    "node": ">=24.15.0 <25",
+    "node": ">=24.22.1 <25",
     "pnpm": "10.29.3"
   },
   "scripts": {
@@ -21,12 +21,12 @@
     "product:hatter:build": "nuxt generate products/hatter"
   },
   "dependencies": {
-    "@nuxtjp/localized-site": "0.2.6",
-    "nuxt": "4.6.1",
+    "@nuxtjp/localized-site": "0.2.7",
+    "nuxt": "4.6.2",
     "vue": "3.5.44"
   },
   "devDependencies": {
-    "@nuxtjp/dependency-security": "0.1.0",
+    "@nuxtjp/dependency-security": "0.1.2",
     "@types/node": "24.19.2",
     "typescript": "5.9.3",
     "vue-tsc": "3.3.13",
@@ -35,8 +35,7 @@
   "pnpm": {
     "patchedDependencies": {
       "braces@3.0.3": ".nuxtjp-security/braces-3.0.3.patch",
-      "node-forge@1.4.0": ".nuxtjp-security/node-forge-1.4.0.patch",
-      "simple-git@4.0.2": ".nuxtjp-security/simple-git-4.0.2.patch"
+      "node-forge@1.4.0": ".nuxtjp-security/node-forge-1.4.0.patch"
     },
     "overrides": {
       "simple-git": "4.0.2",
