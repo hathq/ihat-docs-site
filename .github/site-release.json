@@ -9,7 +9,7 @@
   "sites": [
     {
       "id": "ihat-docs",
-      "version": "0.1.9",
+      "version": "0.1.10",
       "account": "0655772369a7b3425e3398313a36521b",
       "worker": "ihat-docs-site",
       "domain": "ihat.online",
@@ -23,7 +23,7 @@
     },
     {
       "id": "hatter",
-      "version": "0.1.8",
+      "version": "0.1.9",
       "account": "0655772369a7b3425e3398313a36521b",
       "zone": "0125fca3c0936a9784fec222aba2a2e3",
       "zoneName": "ihat.online",
