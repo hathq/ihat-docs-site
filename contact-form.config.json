@@ -1,0 +1,9 @@
+{
+  "mode": "live",
+  "endpoint": "https://ihat.online/v1/submissions",
+  "siteKey": "ihat",
+  "emailMode": "optional",
+  "turnstileSiteKey": "0x4AAAAAAFn__KmPFJfnhRg4",
+  "privacyUrl": "https://hat-tech.co.jp/privacy",
+  "policyVersion": "urn:coela:legal:organization:hat-inc:privacy-policy@6312887c4fcadf3184af13ad32961b75911a886f"
+}

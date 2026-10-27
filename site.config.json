@@ -108,11 +108,11 @@
       },
       "privacy": {
         "label": "プライバシー",
-        "summary": "仕様閲覧のためにHATの実行履歴、会話、資格情報、顧客データを要求しません。将来の解析機能は公開文書と明示的な同意境界を備えるまで無効です。"
+        "summary": "お問い合わせ・情報提供には株式会社HATの共通プライバシーポリシーを適用します。"
       },
       "contact": {
         "label": "仕様に関する連絡",
-        "summary": "仕様の誤りや安全上の懸念は、ihat.onlineで確認済みとして案内される窓口へ、再現に必要な公開情報だけを送ってください。秘密値や会話記録を添付しないでください。"
+        "summary": "お問い合わせフォームをご利用ください。返信先は任意です。秘密情報は送らないでください。"
       }
     },
     "en": {
@@ -210,11 +210,11 @@
       },
       "privacy": {
         "label": "Privacy",
-        "summary": "Reading the specification does not require HAT execution history, conversations, credentials, or customer data. Future analytics remain disabled until public documentation and an explicit consent boundary exist."
+        "summary": "The common HAT Inc. privacy policy applies to inquiries and reports."
       },
       "contact": {
         "label": "Specification contact",
-        "summary": "Report specification errors or safety concerns through a verified channel identified on ihat.online, sending only public information needed to reproduce the issue. Never attach secrets or conversation records."
+        "summary": "Use the contact form. Reply email is optional. Do not send confidential information."
       }
     }
   }

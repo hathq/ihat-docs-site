@@ -510,18 +510,44 @@
           "status": "published"
         },
         {
-          "path": "/privacy",
-          "title": "プライバシー",
-          "summary": "このサイトで扱う情報について。",
+          "path": "/contact",
+          "title": "お問い合わせ",
+          "summary": "お問い合わせ・情報提供を受け付けます。返信先は任意です。",
+          "kind": "page",
+          "label": "お問い合わせ",
+          "category": "",
+          "status": "published",
           "sections": [
             {
-              "title": "閲覧時の情報",
-              "text": "このサイトは静的なページを配信します。配信とセキュリティのため、配信事業者がIPアドレスなどの通信情報を処理します。独自のアクセス解析やログイン機能は設置していません。",
-              "links": []
+              "title": "個人情報の取扱い",
+              "text": "株式会社HATが受付・情報管理を行います。本文に不要な個人情報や秘密情報を記載しないでください。返信先がない場合は返信できません。",
+              "links": [
+                {
+                  "title": "共通プライバシーポリシー",
+                  "href": "https://hat-tech.co.jp/privacy"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/privacy",
+          "title": "プライバシー",
+          "summary": "このサイトで受け付ける個人情報は株式会社HATが管理し、同社の共通ポリシーを適用します。",
+          "sections": [
+            {
+              "title": "管理主体と適用ポリシー",
+              "text": "受付、保存、対応と権利行使の窓口は、HATサイトで一元公開する共通プライバシーポリシーをご確認ください。",
+              "links": [
+                {
+                  "title": "共通プライバシーポリシー",
+                  "href": "https://hat-tech.co.jp/privacy"
+                }
+              ]
             },
             {
-              "title": "外部サイト",
-              "text": "外部リンク先では、それぞれのプライバシー方針をご確認ください。",
+              "title": "サイト配信と不正利用防止",
+              "text": "Cloudflareは配信・セキュリティのため通信情報を処理します。フォーム送信時はTurnstileによる不正利用防止の検証を行います。任意の解析・広告サービスは有効にしていません。",
               "links": []
             }
           ],
@@ -1125,18 +1151,44 @@
           "status": "published"
         },
         {
-          "path": "/privacy",
-          "title": "Privacy",
-          "summary": "How information is handled on this site.",
+          "path": "/contact",
+          "title": "Contact",
+          "summary": "Send an inquiry or report. Reply email is optional.",
+          "kind": "page",
+          "label": "Contact",
+          "category": "",
+          "status": "published",
           "sections": [
             {
-              "title": "Browsing information",
-              "text": "This site serves static pages. The hosting provider processes connection information, including IP addresses, for delivery and security. No site-operated analytics or login is installed.",
-              "links": []
+              "title": "Handling of personal information",
+              "text": "HAT Inc. manages inquiries and personal information. Avoid unnecessary personal or confidential information. Without a reply address, we cannot respond.",
+              "links": [
+                {
+                  "title": "Common privacy policy",
+                  "href": "https://hat-tech.co.jp/privacy"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/privacy",
+          "title": "Privacy",
+          "summary": "HAT Inc. is the controller of personal information received through this website. Its common privacy policy applies.",
+          "sections": [
+            {
+              "title": "Controller and applicable policy",
+              "text": "Refer to the common privacy policy published on the HAT website for collection, retention, handling and privacy requests.",
+              "links": [
+                {
+                  "title": "Common privacy policy",
+                  "href": "https://hat-tech.co.jp/privacy"
+                }
+              ]
             },
             {
-              "title": "External sites",
-              "text": "External sites have their own privacy policies.",
+              "title": "Site delivery and abuse prevention",
+              "text": "Cloudflare processes connection information for delivery and security. Form submissions use Turnstile to prevent abuse. Optional analytics and advertising services are not enabled.",
               "links": []
             }
           ],
