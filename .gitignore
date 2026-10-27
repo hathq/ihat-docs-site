@@ -79,3 +79,6 @@ __pycache__/
 
 # Locally staged package archives are excluded at every directory depth.
 *.tgz
+
+# Generated from the current Markdown/MDC sources; never a second authoring source.
+**/.generated-documents/

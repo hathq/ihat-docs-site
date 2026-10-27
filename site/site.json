@@ -1,0 +1,201 @@
+{
+  "siteId": "ihat-docs",
+  "origin": "https://ihat.online",
+  "defaultLocale": "ja",
+  "locales": {
+    "ja": {
+      "brand": "iHAT Online",
+      "caption": "",
+      "origin": "https://ihat.online",
+      "locale": "ja",
+      "accent": "#245bb5",
+      "navigation": [
+        {
+          "title": "HATを探す",
+          "href": "/registry"
+        },
+        {
+          "title": "HATを知る",
+          "href": "/hat"
+        },
+        {
+          "title": "Hatter",
+          "href": "/products/hatter"
+        },
+        {
+          "title": "開発者ガイド",
+          "href": "/docs"
+        }
+      ],
+      "resources": [
+        {
+          "title": "環境の構成・状態を確認する",
+          "href": "https://github.com/hathq/hat-ecosystem-control-inspector/releases/tag/hat/v0.10.1",
+          "summary": "環境の構成と状態を調べる役割。 配布版 0.10.1。",
+          "category": "環境・運用"
+        },
+        {
+          "title": "日本の行政区域を参照する",
+          "href": "https://github.com/hathq/hat-japan-administrative-areas/releases/tag/hat/v0.10.1",
+          "summary": "日本の行政区域を参照する役割。 配布版 0.10.1。",
+          "category": "参照データ"
+        },
+        {
+          "title": "日本の行政情報を参照する",
+          "href": "https://github.com/hathq/hat-japan-government-information/releases/tag/hat/v0.10.1",
+          "summary": "日本の行政情報を参照する役割。 配布版 0.10.1。",
+          "category": "参照データ"
+        },
+        {
+          "title": "ローカル推論を管理する",
+          "href": "https://github.com/hathq/hat-local-inference-manager/releases/tag/hat/v0.10.1",
+          "summary": "ローカル推論の管理を支援する役割。 配布版 0.10.1。",
+          "category": "AI・推論"
+        },
+        {
+          "title": "ソフトウェアの設計を支援する",
+          "href": "https://github.com/hathq/hat-software-architect/releases/tag/hat/v0.11.0",
+          "summary": "ソフトウェア設計を支援する役割。 配布版 0.11.0。",
+          "category": "設計・開発"
+        },
+        {
+          "title": "情報源を整理する",
+          "href": "https://github.com/hathq/hat-source-curator/releases/tag/hat/v0.10.1",
+          "summary": "資料と出典の整理を支援する役割。 配布版 0.10.1。",
+          "category": "調査・情報整理"
+        },
+        {
+          "title": "Webサイトの運用を支援する",
+          "href": "https://github.com/hathq/hat-website-operator/releases/tag/hat/v0.10.1",
+          "summary": "Webサイト運用を支援する役割。 配布版 0.10.1。",
+          "category": "環境・運用"
+        },
+        {
+          "title": "NERPとの連携を支援する",
+          "href": "https://github.com/neo-erp/hat-nerp-operator/releases/tag/hat/v0.10.1",
+          "summary": "NERPとの業務連携を支援する役割。 配布版 0.10.1。",
+          "category": "業務連携"
+        }
+      ],
+      "icon": "/brand/icon.png",
+      "secondaryAction": {
+        "title": "Hatterを知る",
+        "href": "/products/hatter"
+      },
+      "pageOrder": [
+        "/",
+        "/hat",
+        "/hat/specification",
+        "/hat/registry",
+        "/hat/local-first",
+        "/use-cases",
+        "/products/hatter",
+        "/registry",
+        "/docs",
+        "/docs/getting-started",
+        "/journal",
+        "/contact",
+        "/privacy",
+        "/security",
+        "/sitemap"
+      ]
+    },
+    "en": {
+      "brand": "iHAT Online",
+      "caption": "",
+      "origin": "https://ihat.online",
+      "locale": "en",
+      "accent": "#245bb5",
+      "navigation": [
+        {
+          "title": "Explore HATs",
+          "href": "/registry"
+        },
+        {
+          "title": "Understand HATs",
+          "href": "/hat"
+        },
+        {
+          "title": "Hatter",
+          "href": "/products/hatter"
+        },
+        {
+          "title": "Developer guide",
+          "href": "/docs"
+        }
+      ],
+      "resources": [
+        {
+          "title": "Inspect environment configuration and state",
+          "href": "https://github.com/hathq/hat-ecosystem-control-inspector/releases/tag/hat/v0.10.1",
+          "summary": "Inspect environment configuration and state. Release 0.10.1.",
+          "category": "Environments & operations"
+        },
+        {
+          "title": "Reference Japanese administrative areas",
+          "href": "https://github.com/hathq/hat-japan-administrative-areas/releases/tag/hat/v0.10.1",
+          "summary": "Reference Japanese administrative areas. Release 0.10.1.",
+          "category": "Reference data"
+        },
+        {
+          "title": "Reference Japanese government information",
+          "href": "https://github.com/hathq/hat-japan-government-information/releases/tag/hat/v0.10.1",
+          "summary": "Reference Japanese government information. Release 0.10.1.",
+          "category": "Reference data"
+        },
+        {
+          "title": "Manage local inference",
+          "href": "https://github.com/hathq/hat-local-inference-manager/releases/tag/hat/v0.10.1",
+          "summary": "Support local inference management. Release 0.10.1.",
+          "category": "AI & inference"
+        },
+        {
+          "title": "Support software architecture",
+          "href": "https://github.com/hathq/hat-software-architect/releases/tag/hat/v0.11.0",
+          "summary": "Support software architecture. Release 0.11.0.",
+          "category": "Design & development"
+        },
+        {
+          "title": "Curate sources",
+          "href": "https://github.com/hathq/hat-source-curator/releases/tag/hat/v0.10.1",
+          "summary": "Support source and information curation. Release 0.10.1.",
+          "category": "Research & knowledge"
+        },
+        {
+          "title": "Support website operations",
+          "href": "https://github.com/hathq/hat-website-operator/releases/tag/hat/v0.10.1",
+          "summary": "Support website operations. Release 0.10.1.",
+          "category": "Environments & operations"
+        },
+        {
+          "title": "Support NERP integration",
+          "href": "https://github.com/neo-erp/hat-nerp-operator/releases/tag/hat/v0.10.1",
+          "summary": "Support business integration with NERP. Release 0.10.1.",
+          "category": "Business integration"
+        }
+      ],
+      "icon": "/brand/icon.png",
+      "secondaryAction": {
+        "title": "Discover Hatter",
+        "href": "/products/hatter"
+      },
+      "pageOrder": [
+        "/",
+        "/hat",
+        "/hat/specification",
+        "/hat/registry",
+        "/hat/local-first",
+        "/use-cases",
+        "/products/hatter",
+        "/registry",
+        "/docs",
+        "/docs/getting-started",
+        "/journal",
+        "/contact",
+        "/privacy",
+        "/security",
+        "/sitemap"
+      ]
+    }
+  }
+}

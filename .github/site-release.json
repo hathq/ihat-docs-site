@@ -9,7 +9,7 @@
   "sites": [
     {
       "id": "ihat-docs",
-      "version": "0.1.13",
+      "version": "0.1.14",
       "account": "0655772369a7b3425e3398313a36521b",
       "worker": "ihat-docs-site",
       "domain": "ihat.online",
@@ -19,11 +19,12 @@
       "appDirectory": ".",
       "assetDirectory": ".output/public",
       "buildKind": "nuxt-generate",
-      "zone": "0125fca3c0936a9784fec222aba2a2e3"
+      "zone": "0125fca3c0936a9784fec222aba2a2e3",
+      "documentDirectory": "site"
     },
     {
       "id": "hatter",
-      "version": "0.1.12",
+      "version": "0.1.13",
       "account": "0655772369a7b3425e3398313a36521b",
       "zone": "0125fca3c0936a9784fec222aba2a2e3",
       "zoneName": "ihat.online",
@@ -36,7 +37,8 @@
       "appDirectory": "products/hatter",
       "assetDirectory": "products/hatter/.output/public",
       "buildKind": "nuxt-generate",
-      "deploymentEnabled": true
+      "deploymentEnabled": true,
+      "documentDirectory": "products/hatter/site"
     }
   ]
 }
