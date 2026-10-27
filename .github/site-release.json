@@ -19,7 +19,8 @@
       "appDirectory": ".",
       "assetDirectory": ".output/public",
       "buildKind": "nuxt-generate",
-      "zone": "0125fca3c0936a9784fec222aba2a2e3"
+      "zone": "0125fca3c0936a9784fec222aba2a2e3",
+      "documentDirectory": "site"
     },
     {
       "id": "hatter",
@@ -36,7 +37,8 @@
       "appDirectory": "products/hatter",
       "assetDirectory": "products/hatter/.output/public",
       "buildKind": "nuxt-generate",
-      "deploymentEnabled": true
+      "deploymentEnabled": true,
+      "documentDirectory": "products/hatter/site"
     }
   ]
 }
