@@ -1,0 +1,101 @@
+{
+  "siteId": "hatter",
+  "origin": "https://hatter.ihat.online",
+  "defaultLocale": "ja",
+  "locales": {
+    "ja": {
+      "brand": "Hatter",
+      "caption": "",
+      "origin": "https://hatter.ihat.online",
+      "locale": "ja",
+      "accent": "#08759a",
+      "icon": "/brand/icon.png",
+      "navigation": [
+        {
+          "title": "機能",
+          "href": "/features"
+        },
+        {
+          "title": "活用シーン",
+          "href": "/use-cases"
+        },
+        {
+          "title": "ドキュメント",
+          "href": "/docs"
+        },
+        {
+          "title": "ダウンロード",
+          "href": "/download"
+        }
+      ],
+      "resources": [],
+      "secondaryAction": {
+        "title": "導入・ドキュメント",
+        "href": "/docs"
+      },
+      "pageOrder": [
+        "/docs",
+        "/docs/getting-started",
+        "/journal",
+        "/contact",
+        "/privacy",
+        "/security",
+        "/sitemap",
+        "/",
+        "/features",
+        "/features/roles",
+        "/features/local-first",
+        "/features/permissions",
+        "/use-cases",
+        "/download"
+      ]
+    },
+    "en": {
+      "brand": "Hatter",
+      "caption": "",
+      "origin": "https://hatter.ihat.online",
+      "locale": "en",
+      "accent": "#08759a",
+      "icon": "/brand/icon.png",
+      "navigation": [
+        {
+          "title": "Features",
+          "href": "/features"
+        },
+        {
+          "title": "Use cases",
+          "href": "/use-cases"
+        },
+        {
+          "title": "Docs",
+          "href": "/docs"
+        },
+        {
+          "title": "Download",
+          "href": "/download"
+        }
+      ],
+      "resources": [],
+      "secondaryAction": {
+        "title": "Setup & documentation",
+        "href": "/docs"
+      },
+      "pageOrder": [
+        "/docs",
+        "/docs/getting-started",
+        "/journal",
+        "/contact",
+        "/privacy",
+        "/security",
+        "/sitemap",
+        "/",
+        "/features",
+        "/features/roles",
+        "/features/local-first",
+        "/features/permissions",
+        "/use-cases",
+        "/download"
+      ]
+    }
+  }
+}
