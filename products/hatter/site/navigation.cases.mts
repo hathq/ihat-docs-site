@@ -1,8 +1,9 @@
+import documentContent from './content.mjs'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import test from 'node:test'
 import { validateNavigation, requiredPaths, type Content } from './navigation.mts'
-const data = JSON.parse(readFileSync(new URL('./content.json', import.meta.url), 'utf8')) as { locales: { ja: Content; en: Content } }
+const data = documentContent as { locales: { ja: Content; en: Content } }
 for (const locale of ['ja', 'en'] as const) {
   const original = data.locales[locale]
   test(`${locale}: ordinary entries have useful destinations`, () => validateNavigation(original))

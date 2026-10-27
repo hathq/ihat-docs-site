@@ -1,10 +1,11 @@
 # Site-owned multi-page template
 
 This scaffold was adopted from `nuxtjp/site-builder/templates/service-site`.
-It runs on the published localized-site module; no manager checkout, workspace
-path dependency, credential or new registry release is required.
+This migration requires the documents API in the reviewed localized-site 0.4.0
+release. The local source candidate is not an npm publication receipt.
 
-Edit `content.json` for reviewed pages, navigation, categories and resource links.
+Edit `documents/{ja,en}/**/*.md` for reviewed page bodies and metadata.
+Edit `site.json` for navigation, categories, resource facts and explicit `pageOrder`.
 Both languages must contain the same unique paths. Keep navigation to five
 visitor goals; place detailed pages under their parent section. Every internal
 link must resolve. `module.ts` prerenders published pages and generates the XML
@@ -22,3 +23,11 @@ Each owner can change its presentation independently. Retain LICENSE/NOTICE and
 asset attribution when adapting this Apache-2.0 scaffold. Brand assets retain
 their existing site-specific rights. Public pages do not describe migration,
 authoring placeholders or infrastructure approval procedures.
+
+## Generated document outputs
+
+`content.mjs` validates the current MDC source and parses the official MDC AST and renders Vue components,
+`/raw/*.md` and `/llms.txt` from the same published selection. HTML links to
+its Markdown alternate. Ignore `.generated-documents/`; edit the source MDC,
+never the generated content snapshot. The removed authored `content.json` and
+PageSections renderer have no compatibility fallback.
