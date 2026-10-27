@@ -1,8 +1,9 @@
 # Site-owned multi-page template
 
 This scaffold was adopted from `nuxtjp/site-builder/templates/service-site`.
-This migration requires the documents API in the reviewed localized-site 0.4.0
-release. The local source candidate is not an npm publication receipt.
+This presentation uses the shared documents and declarative UI APIs from
+localized-site 0.5.0. Package publication and production deployment are verified
+separately from the source changes.
 
 Edit `documents/{ja,en}/**/*.md` for reviewed page bodies and metadata.
 Edit `site.json` for navigation, categories, resource facts and explicit `pageOrder`.
@@ -31,3 +32,13 @@ authoring placeholders or infrastructure approval procedures.
 its Markdown alternate. Ignore `.generated-documents/`; edit the source MDC,
 never the generated content snapshot. The removed authored `content.json` and
 PageSections renderer have no compatibility fallback.
+
+
+## Declarative presentation
+
+The route adapter composes `NuxtJpServiceSite` with public document data, local
+experience data and named slots. Shared components and CSS belong to localized-site
+0.5.0. The Nuxt adapter validates that pages contain no style blocks, CSS imports
+or inline style bindings. Product-specific components retain their own behavior
+and scoped styles. Formal package adoption and production acceptance remain
+separate from this source migration.
