@@ -1,0 +1,26 @@
+name: Release sites from successful main CI
+on:
+  workflow_run:
+    workflows: ['Site source acceptance', 'OSS policy']
+    types: [completed]
+    branches: [main]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: site-main-dispatch-${{ github.repository }}
+  cancel-in-progress: false
+jobs:
+  ihat-docs:
+    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push' && github.event.workflow_run.head_repository.full_name == github.repository
+    uses: ./.github/workflows/release-main-target.yml
+    with:
+      site: ihat-docs
+      source-sha: ${{ github.event.workflow_run.head_sha }}
+  hatter:
+    needs: ihat-docs
+    if: ${{ needs.ihat-docs.result == 'success' }}
+    uses: ./.github/workflows/release-main-target.yml
+    with:
+      site: hatter
+      source-sha: ${{ github.event.workflow_run.head_sha }}
