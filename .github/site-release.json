@@ -40,5 +40,9 @@
       "deploymentEnabled": true,
       "documentDirectory": "products/hatter/site"
     }
+  ],
+  "requiredChecks": [
+    "repository-policy",
+    "site-source"
   ]
 }
